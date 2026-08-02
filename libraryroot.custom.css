@@ -1,32 +1,207 @@
 /* ==========================================================================
-   👻 EXCLUSIVE SIDEBAR TARGETING TEST (libraryroot.custom.css)
+   👻 GHOST STEAM THEME - STEAM LIBRARY PAGE (libraryroot.custom.css)
+   ==========================================================================
+   Target: Steam Library Page Only
+   Right Grid & ALL Shelves: 100% Deep Pitch Black (#05070a) via Transparent Reset
+   Left Sidebar Column: Distinct Grey-Blackish Glass (#0d121f)
+   Accent: Royal Blue (#2563eb / #3b82f6)
+   Style: Sharp Edges (Zero rounded corners)
    ========================================================================== */
 
-/* Main Library Grid & Page Base -> Pitch Black */
-body, html, .DesktopUI,
-._3Sb2o_mQ30IDRh0C72QUUu,
-._3yX7xQ6-Q6o6t-9aNn5K,
-.u1xD3KJEgksF_J_5TLZzO,
-._17uEBe5Ri8TMsnfELvs8-N,
-div[class*="library_AppGrid"],
-div[class*="library_LibraryHome"] {
+/* ==========================================================================
+   1. DESIGN TOKENS & NATIVE OVERRIDES
+   ========================================================================== */
+
+:root, html, body, .DesktopUI, .FullModalOverlay {
+    --minimal_dark_blacker: #05070a !important;
+    --minimal_dark_blacker_alt: #05070a !important;
+    --minimal_dark_black: #05070a !important;
+    --minimal_dark_be_grey: transparent !important;
+    --minimal_dark_corner: 0px !important;
+
+    --ghost-accent-primary: #2563eb !important;
+    --ghost-accent-secondary: #3b82f6 !important;
+    --ghost-bg-base: #05070a !important;
+
+    --gpBackground-Store: #05070a !important;
+    --gpSystemDarkest: #05070a !important;
+    --gpSystemDarker: #080b10 !important;
+    --gpSystemDark: #0c0f17 !important;
+
+    --gpColor-Blue: #2563eb !important;
+    --gpColor-BlueHi: #3b82f6 !important;
+    --color-accent: #2563eb !important;
+
     background-color: #05070a !important;
     background: #05070a !important;
 }
 
-/* EXCLUSIVE LEFT SIDEBAR COLUMN -> BRIGHT RED */
+/* ==========================================================================
+   2. RIGHT PANEL (TRANSPARENT CONTAINER RESET FOR 100% PITCH BLACK #05070a)
+   ========================================================================== */
+
+html, body, .DesktopUI, .FullModalOverlay {
+    background-color: #05070a !important;
+    background: #05070a !important;
+}
+
+/* Transparent reset on all right grid & shelf containers */
+._17uEBe5Ri8TMsnfELvs8-N,
+._3Sb2o_mQ30IDRh0C72QUUu,
+._2gSXCB6PbOlMxslr8hm6dm,
+._3C_3Y2u1k1O4p0,
+._3yX7xQ6-Q6o6t-9aNn5K,
+.u1xD3KJEgksF_J_5TLZzO,
+div[class*="library_AppGrid"],
+div[class*="library_CollectionGrid"],
+div[class*="library_LibraryHome"],
+div[class*="library_CollectionSection"],
+div[class*="library_Container"],
+div[class*="appdetails_"],
+div[class*="scroll_"],
+div[class*="collection_"],
+div[class*="whatsnew_"],
+div[class*="shelf_"] {
+    background-color: transparent !important;
+    background: transparent !important;
+    background-image: none !important;
+}
+
+/* ==========================================================================
+   3. EXCLUSIVE LEFT SIDEBAR COLUMN (GREY-BLACKISH GLASS #0d121f)
+   ========================================================================== */
+
+/* Main Sidebar Panel -> Distinct Grey-Blackish Slate Glass (#0d121f) */
 ._3x1HklzyDs4TEjACrRO2tB,
 div[class*="library_AppListContainer"],
 div[class*="library_appListContainer"] {
-    background-color: #ff0000 !important;
-    background: #ff0000 !important;
+    background-color: #0d121f !important;
+    background: #0d121f !important;
+    border-right: 1px solid rgba(37, 99, 235, 0.25) !important;
+    box-shadow: 6px 0 24px rgba(0, 0, 0, 0.7) !important;
 }
 
-/* Strip solid row fills so the red sidebar shows cleanly */
+/* Strip solid background blocks from unselected rows & headers */
 ._3qwXPrhpZYqVbJxrZDrvjy,
 ._2sYIghGVXJr6tsQVvcryy8,
 .MyNb5dG3FsBnKdp8j_ntk,
-._2-O4ZG0KrnSrzISHBKctFQ {
+._2-O4ZG0KrnSrzISHBKctFQ,
+div[class*="CollectionHeader"],
+div[class*="collectionheader_"],
+div[class*="gamelistsection_"],
+div[class*="gamelistentry_"] {
     background: transparent !important;
     background-color: transparent !important;
+    background-image: none !important;
+    border-color: transparent !important;
+    border-radius: 0px !important;
+}
+
+/* Category Collapse Headers (FAVOURITES, MP, ZETTLEKASTEN) */
+._3qwXPrhpZYqVbJxrZDrvjy,
+._2sYIghGVXJr6tsQVvcryy8,
+.MyNb5dG3FsBnKdp8j_ntk {
+    background: #111728 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Selected Category Header (e.g. - ZETTLEKASTEN or + MP) -> Royal Blue Glass */
+._3qwXPrhpZYqVbJxrZDrvjy._2zGph-MSF37bUmk_Qlu_XG,
+._2sYIghGVXJr6tsQVvcryy8._2zGph-MSF37bUmk_Qlu_XG,
+div[class*="CollectionHeader"][class*="selected"] {
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.3) 0%, rgba(17, 23, 40, 0.8) 100%) !important;
+    border-left: 3px solid #2563eb !important;
+}
+
+/* Category Header Text */
+._3qwXPrhpZYqVbJxrZDrvjy,
+._2sYIghGVXJr6tsQVvcryy8,
+._2-O4ZG0KrnSrzISHBKctFQ,
+div[class*="CollectionHeader"] {
+    color: #cbd5e1 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Game Title Text Color */
+._2ws8DONH9fxQjPXEmRpujE,
+._5YTBr7WwIfzVU_3nUtAph {
+    color: #f1f5f9 !important;
+    opacity: 1 !important;
+}
+
+/* Search Bar Glass Input Container */
+[class*="SearchFilterInput"],
+input[class*="searchFilterInput"] {
+    background: #141b2d !important;
+    border: 1px solid rgba(37, 99, 235, 0.25) !important;
+    border-radius: 0px !important;
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   4. SELECTED GAME ITEM -> SHARP ROYAL BLUE GLASS HIGHLIGHT
+   ========================================================================== */
+
+._2-O4ZG0KrnSrzISHBKctFQ._3cMVyOc-9F9Jvp3uKF7_xj,
+._1UBpAXP408Ez_L_mXhW5Q9._2-O4ZG0KrnSrzISHBKctFQ,
+[class*="GameListItem"][class*="selected"],
+[class*="GameListItem"][class*="Selected"] {
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.35) 0%, rgba(59, 130, 246, 0.12) 100%) !important;
+    backdrop-filter: blur(12px) !important;
+    border-left: 3px solid #2563eb !important;
+    border-radius: 0px !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 0 10px rgba(37, 99, 235, 0.25) !important;
+}
+
+/* Hover state on unselected game list items */
+._2-O4ZG0KrnSrzISHBKctFQ:hover,
+[class*="GameListItem"]:hover {
+    color: #ffffff !important;
+    background: rgba(37, 99, 235, 0.15) !important;
+    border-radius: 0px !important;
+}
+
+/* ==========================================================================
+   5. TOP NAVIGATION BAR & ACTIVE TAB UNDERLINE (Royal Blue Accent)
+   ========================================================================== */
+
+div[class*="supernav_container"] a[class*="active"],
+a[class*="menuitem"][class*="active"],
+a.menuitem.active,
+._3j2xR0 {
+    color: #ffffff !important;
+    border-bottom: 2px solid #2563eb !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45) !important;
+}
+
+div[class*="supernav_container"] a:hover,
+a[class*="menuitem"]:hover {
+    color: #3b82f6 !important;
+    text-shadow: 0 0 8px rgba(37, 99, 235, 0.5) !important;
+}
+
+/* ==========================================================================
+   6. ROYAL BLUE PLAY BUTTON (Sharp Edges)
+   ========================================================================== */
+
+button[class*="playbutton_PlayButton"],
+div[class*="playbutton_PlayButton"],
+.playButton {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    border-radius: 0px !important;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.45) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+button[class*="playbutton_PlayButton"]:hover,
+.playButton:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.75) !important;
+    filter: brightness(1.15) !important;
 }
