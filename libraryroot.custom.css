@@ -3,8 +3,8 @@
    ==========================================================================
    Target: Steam Library Page Only
    Background: Deep Blackish (#05070a)
-   Sidebar: Clean Integrated Dark Panel with Frosted Glass Selected Highlights
    Accent: Royal Blue (#2563eb / #3b82f6)
+   Style: Sharp Edges (Zero rounded corners)
    ========================================================================== */
 
 /* ==========================================================================
@@ -16,6 +16,7 @@
     --minimal_dark_blacker_alt: #05070a !important;
     --minimal_dark_black: #05070a !important;
     --minimal_dark_be_grey: transparent !important;
+    --minimal_dark_corner: 0px !important;
 
     --ghost-accent-primary: #2563eb !important;
     --ghost-accent-secondary: #3b82f6 !important;
@@ -58,7 +59,7 @@ div[class*="shelf_"] {
 }
 
 /* ==========================================================================
-   3. SIDEBAR PANEL & TRANSPARENT ROW RESETS
+   3. SIDEBAR PANEL & SHARP EDGES
    ========================================================================== */
 
 /* Main Sidebar Panel Base */
@@ -86,6 +87,7 @@ div[class*="gamelistentry_"] {
     background-color: transparent !important;
     background-image: none !important;
     border-color: transparent !important;
+    border-radius: 0px !important;
 }
 
 /* Category Text (FAVOURITES, MP, ZETTLEKASTEN) */
@@ -105,34 +107,34 @@ div[class*="CollectionHeader"] {
     opacity: 1 !important;
 }
 
-/* Category Header Hover State */
+/* Category Header Hover State -> Sharp Edges */
 ._2sYIghGVXJr6tsQVvcryy8:hover,
 div[class*="CollectionHeader"]:hover {
     background: rgba(37, 99, 235, 0.12) !important;
-    border-radius: 4px !important;
+    border-radius: 0px !important;
 }
 
-/* Active Category Header (e.g. - ZETTLEKASTEN or + MP) -> Frosted Blue Glass */
+/* Active Category Header (e.g. - ZETTLEKASTEN or + MP) -> Sharp Blue Glass */
 ._3qwXPrhpZYqVbJxrZDrvjy._2zGph-MSF37bUmk_Qlu_XG,
 ._2sYIghGVXJr6tsQVvcryy8._2zGph-MSF37bUmk_Qlu_XG,
 div[class*="CollectionHeader"][class*="selected"] {
     background: rgba(37, 99, 235, 0.22) !important;
     border-left: 3px solid #2563eb !important;
-    border-radius: 4px !important;
+    border-radius: 0px !important;
 }
 
-/* Search Bar Glass Input Container */
+/* Search Bar Glass Input Container -> Sharp Edges */
 [class*="SearchFilterInput"],
 input[class*="searchFilterInput"] {
     background: rgba(15, 23, 42, 0.6) !important;
     border: 1px solid rgba(37, 99, 235, 0.25) !important;
     backdrop-filter: blur(10px) !important;
-    border-radius: 8px !important;
+    border-radius: 0px !important;
     color: #ffffff !important;
 }
 
 /* ==========================================================================
-   4. SELECTED GAME ITEM -> PREMIUM ROYAL BLUE GLASSMORPHIC HIGHLIGHT
+   4. SELECTED GAME ITEM -> SHARP ROYAL BLUE GLASS HIGHLIGHT
    ========================================================================== */
 
 ._2-O4ZG0KrnSrzISHBKctFQ._3cMVyOc-9F9Jvp3uKF7_xj,
@@ -142,17 +144,17 @@ input[class*="searchFilterInput"] {
     background: linear-gradient(90deg, rgba(37, 99, 235, 0.35) 0%, rgba(59, 130, 246, 0.12) 100%) !important;
     backdrop-filter: blur(12px) !important;
     border-left: 3px solid #2563eb !important;
-    border-radius: 4px !important;
+    border-radius: 0px !important;
     color: #ffffff !important;
     box-shadow: inset 0 0 10px rgba(37, 99, 235, 0.25) !important;
 }
 
-/* Hover state on unselected game list items */
+/* Hover state on unselected game list items -> Sharp Edges */
 ._2-O4ZG0KrnSrzISHBKctFQ:hover,
 [class*="GameListItem"]:hover {
     color: #ffffff !important;
     background: rgba(37, 99, 235, 0.15) !important;
-    border-radius: 4px !important;
+    border-radius: 0px !important;
 }
 
 /* ==========================================================================
@@ -175,7 +177,7 @@ a[class*="menuitem"]:hover {
 }
 
 /* ==========================================================================
-   6. ROYAL BLUE PLAY BUTTON
+   6. ROYAL BLUE PLAY BUTTON (Sharp Edges)
    ========================================================================== */
 
 button[class*="playbutton_PlayButton"],
@@ -185,7 +187,7 @@ div[class*="playbutton_PlayButton"],
     border: none !important;
     color: #ffffff !important;
     font-weight: 800 !important;
-    border-radius: 8px !important;
+    border-radius: 0px !important;
     box-shadow: 0 0 15px rgba(37, 99, 235, 0.45) !important;
     transition: transform 0.2s ease, box-shadow 0.2s ease !important;
 }
