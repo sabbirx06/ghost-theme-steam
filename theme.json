@@ -1,8 +1,8 @@
 {
-	"name": "Ghost Theme",
+	"name": "ghost-steam",
 	"author": "Ghost",
 	"version": "1.0.0",
-	"description": "Skeletal template for custom Steam Ghost Theme.",
+	"description": "Custom Steam Ghost Theme with Blackish background and Royal Blue accent.",
 	"entry": "libraryroot.custom.css",
 	"patches": {
 		"libraryroot.custom.css": ".*"

@@ -1,108 +1,183 @@
 /* ==========================================================================
-   👻 SKELETAL TEMPLATE: MAIN LIBRARY ROOT STYLES (libraryroot.custom.css)
+   👻 GHOST STEAM THEME - STEAM LIBRARY PAGE (libraryroot.custom.css)
    ==========================================================================
-   This is the primary stylesheet for the Steam Client UI.
-   All major sections are organized below with comments explaining how to style
-   each component.
+   Target: Steam Library Page Only
+   Background: Deep Blackish (#05070a)
+   Sidebar: Clean Frosted Glassmorphism with Royal Blue Accent Divider
+   Accent: Royal Blue (#2563eb / #3b82f6)
    ========================================================================== */
-
-@import url('webkit.css');
-@import url('friends.custom.css');
 
 /* ==========================================================================
-   SECTION 1: WINDOW TITLEBAR & CONTROL BUTTONS
-   ==========================================================================
-   Controls top draggable window titlebar and close/minimize/maximize buttons.
+   1. DESIGN TOKENS & NATIVE OVERRIDES
    ========================================================================== */
 
-/* Titlebar container hook:
-.title-area {
-    background-color: var(--ghost-bg-base) !important;
+:root, html, body, .DesktopUI, .FullModalOverlay {
+    --minimal_dark_blacker: #05070a !important;
+    --minimal_dark_blacker_alt: #05070a !important;
+    --minimal_dark_black: #05070a !important;
+    --minimal_dark_be_grey: transparent !important;
+
+    --ghost-accent-primary: #2563eb !important;
+    --ghost-accent-secondary: #3b82f6 !important;
+    --ghost-bg-base: #05070a !important;
+
+    --gpBackground-Store: #05070a !important;
+    --gpSystemDarkest: #05070a !important;
+    --gpSystemDarker: #080b10 !important;
+    --gpSystemDark: #0c0f17 !important;
+
+    --gpColor-Blue: #2563eb !important;
+    --gpColor-BlueHi: #3b82f6 !important;
+    --color-accent: #2563eb !important;
+
+    background-color: #05070a !important;
+    background: #05070a !important;
 }
-*/
 
 /* ==========================================================================
-   SECTION 2: TOP NAVIGATION HEADER (Store, Library, Community, Profile)
-   ==========================================================================
-   Controls the main text navigation bar and active tab underline indicator.
+   2. MAIN LIBRARY GRID CONTAINERS -> DEEP BLACKISH (#05070a)
    ========================================================================== */
 
-/* Active page underline indicator hook:
-div[class*="supernav_container"] a[class*="active"],
-a[class*="menuitem"][class*="active"] {
-    border-bottom: 2px solid var(--ghost-accent-primary) !important;
+body, html, .DesktopUI, .FullModalOverlay,
+.u1xD3KJEgksF_J_5TLZzO,
+._17uEBe5Ri8TMsnfELvs8-N,
+._2gSXCB6PbOlMxslr8hm6dm,
+._3C_3Y2u1k1O4p0,
+._3yX7xQ6-Q6o6t-9aNn5K,
+div[class*="library_AppGrid"],
+div[class*="library_CollectionGrid"],
+div[class*="library_LibraryHome"],
+div[class*="appdetails_"],
+div[class*="scroll_"],
+div[class*="collection_"],
+div[class*="whatsnew_"],
+div[class*="shelf_"] {
+    background-color: #05070a !important;
+    background: #05070a !important;
+    background-image: none !important;
 }
-*/
 
 /* ==========================================================================
-   SECTION 3: SIDEBAR GAME LIST & CATEGORY HEADERS
-   ==========================================================================
-   Controls left-hand sidebar, search bar, collection headers (FAVOURITES, etc),
-   and individual game list items.
+   3. CLEAN FROSTED GLASSMORPHIC SIDEBAR
    ========================================================================== */
 
-/* Category Header rows (FAVOURITES, MP, ZETTLEKASTEN):
-div[class*="library_CollectionHeader"],
-div[class*="collectionheader_"] {
-    color: var(--ghost-text-secondary) !important;
+/* Universal Reset: Strip ALL solid dark backgrounds from all sidebar children */
+._3x1HklzyDs4TEjACrRO2tB *,
+._2TKEazUUS3TlniZfpc8OOe *,
+div[class*="library_AppListContainer"] *,
+div[class*="library_appList"] *,
+div[class*="library_LeftContainer"] * {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* Main Sidebar Glass Container */
+._3x1HklzyDs4TEjACrRO2tB,
+._2TKEazUUS3TlniZfpc8OOe,
+._3Sb2o_mQ30IDRh0C72QUUu,
+div[class*="library_AppListContainer"],
+div[class*="library_appList"],
+div[class*="library_LeftContainer"],
+.library_appListContainer {
+    background: rgba(10, 15, 26, 0.75) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border-right: 1px solid rgba(37, 99, 235, 0.25) !important;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Category Text (FAVOURITES, MP, ZETTLEKASTEN) */
+div[class*="CollectionHeader"],
+div[class*="collectionheader_"],
+._2-O4ZG0KrnSrzISHBKctFQ,
+._2sYIghGVXJr6tsQVvcryy8 {
+    color: #cbd5e1 !important;
     font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
 }
-*/
 
-/* Game List item titles:
-div[class*="library_GameListItem"],
-div[class*="gamelistitem_"] {
-    color: var(--ghost-text-primary) !important;
+/* Category Header Hover State */
+div[class*="CollectionHeader"]:hover,
+div[class*="collectionheader_"]:hover,
+._2sYIghGVXJr6tsQVvcryy8:hover {
+    background: rgba(37, 99, 235, 0.15) !important;
+    border-radius: 4px !important;
 }
-*/
 
-/* ==========================================================================
-   SECTION 4: GAME CARDS, SHELVES & EA FC / FUT CARD HOVER ANIMATIONS
-   ==========================================================================
-   Controls Library Home grid, game posters, shelves, and 3D hover effects.
-   ========================================================================== */
-
-/* Game Card Poster Frame hook:
-div[class*="appportrait_"],
-div[class*="gamecapsule_"] {
-    border-radius: 12px !important;
-    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+/* Selected Category Header (e.g. MP or ZETTLEKASTEN) -> Royal Blue Accent Glass */
+div[class*="CollectionHeader"][class*="selected"],
+div[class*="collectionheader_"][class*="selected"],
+._2sYIghGVXJr6tsQVvcryy8._2zGph-MSF37bUmk_Qlu_XG {
+    background: rgba(37, 99, 235, 0.25) !important;
+    border-left: 3px solid #2563eb !important;
+    border-radius: 4px !important;
 }
-*/
 
-/* FUT 3D Elevation & Neon Glow on Hover hook:
-div[class*="appportrait_"]:hover,
-div[class*="gamecapsule_"]:hover {
-    transform: translateY(-8px) scale(1.04) !important;
-    border-color: var(--ghost-accent-primary) !important;
-    box-shadow: 0 16px 36px rgba(0, 240, 255, 0.6) !important;
-}
-*/
-
-/* ==========================================================================
-   SECTION 5: PLAY BUTTON & GAME DETAILS PAGE
-   ==========================================================================
-   Controls the main game details page, play button gradient, and sections.
-   ========================================================================== */
-
-/* Play / Launch Button hook:
-button[class*="playbutton_PlayButton"],
-.playButton {
-    background: linear-gradient(135deg, var(--ghost-accent-primary), var(--ghost-accent-secondary)) !important;
+/* Search Bar Glass Input Container */
+[class*="SearchFilterInput"],
+input[class*="searchFilterInput"] {
+    background: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid rgba(37, 99, 235, 0.25) !important;
+    backdrop-filter: blur(10px) !important;
     border-radius: 8px !important;
+    color: #ffffff !important;
 }
-*/
+
+/* Selected Game in Sidebar -> Glass Highlight & Royal Blue Accent */
+[class*="GameListItem"][class*="selected"],
+[class*="GameListItem"][class*="Selected"],
+._2-O4ZG0KrnSrzISHBKctFQ._3cMVyOc-9F9Jvp3uKF7_xj {
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.35), rgba(59, 130, 246, 0.15)) !important;
+    border-left: 3px solid #2563eb !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 0 10px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Hover state on game list items */
+[class*="GameListItem"]:hover,
+._2-O4ZG0KrnSrzISHBKctFQ:hover {
+    color: #ffffff !important;
+    background: rgba(37, 99, 235, 0.15) !important;
+}
 
 /* ==========================================================================
-   SECTION 6: MILLENNIUM THEME SETTINGS GUI CONTROLS
-   ==========================================================================
-   Controls Millennium option setting rows, checkmarks, and dropdown buttons.
+   4. TOP NAVIGATION BAR & ACTIVE TAB UNDERLINE (Royal Blue Accent)
    ========================================================================== */
 
-/* Millennium Option Setting Row hook:
-.millennium-setting-row,
-._DialogInputRow {
-    background: var(--ghost-bg-surface) !important;
-    border: 1px solid rgba(0, 240, 255, 0.2) !important;
+div[class*="supernav_container"] a[class*="active"],
+a[class*="menuitem"][class*="active"],
+a.menuitem.active,
+._3j2xR0 {
+    color: #ffffff !important;
+    border-bottom: 2px solid #2563eb !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45) !important;
 }
-*/
+
+div[class*="supernav_container"] a:hover,
+a[class*="menuitem"]:hover {
+    color: #3b82f6 !important;
+    text-shadow: 0 0 8px rgba(37, 99, 235, 0.5) !important;
+}
+
+/* ==========================================================================
+   5. ROYAL BLUE PLAY BUTTON
+   ========================================================================== */
+
+button[class*="playbutton_PlayButton"],
+div[class*="playbutton_PlayButton"],
+.playButton {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.45) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+button[class*="playbutton_PlayButton"]:hover,
+.playButton:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.75) !important;
+    filter: brightness(1.15) !important;
+}

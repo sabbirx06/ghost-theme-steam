@@ -1,83 +1,23 @@
 /* ==========================================================================
-   👻 SKELETAL TEMPLATE: MASTER WEBKIT & COLOR TOKENS (webkit.css)
+   👻 GHOST STEAM THEME - WEBKIT & COLOR TOKENS (webkit.css)
    ==========================================================================
-   This file is the root design system for your custom Steam Theme.
-   It defines all CSS variables (colors, fonts, glass effects, and scrollbars).
-   
-   HOW TO USE:
-   - Edit hex color values in the :root section below to apply custom colors!
-   - All variable hooks are commented to show what part of Steam they control.
+   Blackish Background (#05070a) with Royal Blue Accent (#2563eb).
    ========================================================================== */
 
 :root {
-    /* ----------------------------------------------------------------------
-       1. PRIMARY ACCENT PALETTE
-       ---------------------------------------------------------------------- */
-    /* Primary Accent: Controls play buttons, active tab underlines, primary icons */
-    --ghost-accent-primary: #00f0ff;
+    /* Royal Blue Primary & Secondary Accents */
+    --ghost-accent-primary: #2563eb !important;
+    --ghost-accent-secondary: #3b82f6 !important;
 
-    /* Secondary Accent: Controls hover effects, secondary highlights, badges */
-    --ghost-accent-secondary: #a855f7;
+    /* Blackish Background Palette */
+    --ghost-bg-base: #05070a !important;
+    --ghost-bg-surface: #0a0d14 !important;
+    --ghost-bg-card: #0f131f !important;
 
-    /* Highlight Accent: Controls alerts and warm notifications */
-    --ghost-accent-highlight: #ff007f;
+    /* Text Colors */
+    --ghost-text-primary: #f8fafc !important;
+    --ghost-text-secondary: #94a3b8 !important;
 
-    /* ----------------------------------------------------------------------
-       2. BACKGROUND COLOR SHADES
-       ---------------------------------------------------------------------- */
-    /* Base Background: Main window background (Set to #000000 for AMOLED black) */
-    --ghost-bg-base: #000000;
-
-    /* Surface Background: Sidebar & panel backgrounds */
-    --ghost-bg-surface: #050505;
-
-    /* Card Background: Container and card background fills */
-    --ghost-bg-card: rgba(20, 24, 38, 0.75);
-
-    /* Hover State Background: Element hover background fills */
-    --ghost-bg-hover: rgba(35, 42, 66, 0.85);
-
-    /* ----------------------------------------------------------------------
-       3. TYPOGRAPHY & FONTS
-       ---------------------------------------------------------------------- */
-    /* Primary Text Color: Main readable text */
-    --ghost-text-primary: #f8fafc;
-
-    /* Muted Text Color: Secondary metadata, descriptions, timestamps */
-    --ghost-text-secondary: #cbd5e1;
-
-    /* Font Family Stack: Set to 'inherit' for Steam's native default font */
-    --ghost-font-main: inherit;
-
-    /* ----------------------------------------------------------------------
-       4. STEAM NATIVE CSS VARIABLE HOOKS (Optional Overrides)
-       ---------------------------------------------------------------------- */
-    /* Uncomment any line below to override Steam's internal native colors:
-    --gpBackground-Store: #000000 !important;
-    --gpSystemDarkest: #000000 !important;
-    --gpColor-Blue: var(--ghost-accent-primary) !important;
-    --color-accent: var(--ghost-accent-primary) !important;
-    */
-}
-
-/* ==========================================================================
-   CUSTOM SCROLLBAR STYLING TEMPLATE
-   ========================================================================== */
-
-::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
-
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 9999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--ghost-accent-primary);
+    /* Revert Font to Steam Default */
+    --ghost-font-main: inherit !important;
 }
