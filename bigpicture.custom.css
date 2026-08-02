@@ -1,0 +1,12 @@
+/* ==========================================================================
+   👻 SKELETAL TEMPLATE: BIG PICTURE & STEAM DECK OVERLAY (bigpicture.custom.css)
+   ========================================================================== */
+
+@import url('webkit.css');
+
+/* Big Picture Container hook:
+.FullModalOverlay,
+.GamepadUI {
+    background-color: var(--ghost-bg-base) !important;
+}
+*/

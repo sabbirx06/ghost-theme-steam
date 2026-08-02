@@ -1,0 +1,40 @@
+{
+	"name": "Ghost Theme",
+	"Name": "Ghost Theme",
+	"author": "Ghost",
+	"Author": "Ghost",
+	"version": "1.0.0",
+	"Version": "1.0.0",
+	"description": "Skeletal template for custom Steam Ghost Theme.",
+	"Description": "Skeletal template for custom Steam Ghost Theme.",
+
+	"/* COMMENT: Enables default Steam patch injection (libraryroot.custom.css, webkit.css) */": {},
+	"Steam-WebKit": "webkit.css",
+	"UseDefaultPatches": true,
+
+	"Patches": [
+		{
+			"MatchRegexString": "^Steam$",
+			"TargetCss": "libraryroot.custom.css"
+		},
+		{
+			"MatchRegexString": ".*",
+			"TargetCss": "webkit.css"
+		}
+	],
+
+	"/* COMMENT: Define GUI dropdown options for Millennium Theme Settings here */": {},
+	"Conditions": {
+
+		"Color Palette": {
+			"name": "Color Palette",
+			"tab": "Appearance & Colors",
+			"description": "> Template option for custom color theme presets.",
+			"default": "Default",
+			"values": {
+				"Default": {}
+			}
+		}
+
+	}
+}

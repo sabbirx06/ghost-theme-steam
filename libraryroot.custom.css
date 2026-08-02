@@ -1,0 +1,108 @@
+/* ==========================================================================
+   👻 SKELETAL TEMPLATE: MAIN LIBRARY ROOT STYLES (libraryroot.custom.css)
+   ==========================================================================
+   This is the primary stylesheet for the Steam Client UI.
+   All major sections are organized below with comments explaining how to style
+   each component.
+   ========================================================================== */
+
+@import url('webkit.css');
+@import url('friends.custom.css');
+
+/* ==========================================================================
+   SECTION 1: WINDOW TITLEBAR & CONTROL BUTTONS
+   ==========================================================================
+   Controls top draggable window titlebar and close/minimize/maximize buttons.
+   ========================================================================== */
+
+/* Titlebar container hook:
+.title-area {
+    background-color: var(--ghost-bg-base) !important;
+}
+*/
+
+/* ==========================================================================
+   SECTION 2: TOP NAVIGATION HEADER (Store, Library, Community, Profile)
+   ==========================================================================
+   Controls the main text navigation bar and active tab underline indicator.
+   ========================================================================== */
+
+/* Active page underline indicator hook:
+div[class*="supernav_container"] a[class*="active"],
+a[class*="menuitem"][class*="active"] {
+    border-bottom: 2px solid var(--ghost-accent-primary) !important;
+}
+*/
+
+/* ==========================================================================
+   SECTION 3: SIDEBAR GAME LIST & CATEGORY HEADERS
+   ==========================================================================
+   Controls left-hand sidebar, search bar, collection headers (FAVOURITES, etc),
+   and individual game list items.
+   ========================================================================== */
+
+/* Category Header rows (FAVOURITES, MP, ZETTLEKASTEN):
+div[class*="library_CollectionHeader"],
+div[class*="collectionheader_"] {
+    color: var(--ghost-text-secondary) !important;
+    font-weight: 700 !important;
+}
+*/
+
+/* Game List item titles:
+div[class*="library_GameListItem"],
+div[class*="gamelistitem_"] {
+    color: var(--ghost-text-primary) !important;
+}
+*/
+
+/* ==========================================================================
+   SECTION 4: GAME CARDS, SHELVES & EA FC / FUT CARD HOVER ANIMATIONS
+   ==========================================================================
+   Controls Library Home grid, game posters, shelves, and 3D hover effects.
+   ========================================================================== */
+
+/* Game Card Poster Frame hook:
+div[class*="appportrait_"],
+div[class*="gamecapsule_"] {
+    border-radius: 12px !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+*/
+
+/* FUT 3D Elevation & Neon Glow on Hover hook:
+div[class*="appportrait_"]:hover,
+div[class*="gamecapsule_"]:hover {
+    transform: translateY(-8px) scale(1.04) !important;
+    border-color: var(--ghost-accent-primary) !important;
+    box-shadow: 0 16px 36px rgba(0, 240, 255, 0.6) !important;
+}
+*/
+
+/* ==========================================================================
+   SECTION 5: PLAY BUTTON & GAME DETAILS PAGE
+   ==========================================================================
+   Controls the main game details page, play button gradient, and sections.
+   ========================================================================== */
+
+/* Play / Launch Button hook:
+button[class*="playbutton_PlayButton"],
+.playButton {
+    background: linear-gradient(135deg, var(--ghost-accent-primary), var(--ghost-accent-secondary)) !important;
+    border-radius: 8px !important;
+}
+*/
+
+/* ==========================================================================
+   SECTION 6: MILLENNIUM THEME SETTINGS GUI CONTROLS
+   ==========================================================================
+   Controls Millennium option setting rows, checkmarks, and dropdown buttons.
+   ========================================================================== */
+
+/* Millennium Option Setting Row hook:
+.millennium-setting-row,
+._DialogInputRow {
+    background: var(--ghost-bg-surface) !important;
+    border: 1px solid rgba(0, 240, 255, 0.2) !important;
+}
+*/
