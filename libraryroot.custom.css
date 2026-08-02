@@ -1,200 +1,32 @@
 /* ==========================================================================
-   👻 GHOST STEAM THEME - STEAM LIBRARY PAGE (libraryroot.custom.css)
-   ==========================================================================
-   Target: Steam Library Page Only
-   Background: Deep Blackish (#05070a)
-   Accent: Royal Blue (#2563eb / #3b82f6)
-   Style: Sharp Edges (Zero rounded corners)
+   👻 EXCLUSIVE SIDEBAR TARGETING TEST (libraryroot.custom.css)
    ========================================================================== */
 
-/* ==========================================================================
-   1. DESIGN TOKENS & NATIVE OVERRIDES
-   ========================================================================== */
-
-:root, html, body, .DesktopUI, .FullModalOverlay {
-    --minimal_dark_blacker: #05070a !important;
-    --minimal_dark_blacker_alt: #05070a !important;
-    --minimal_dark_black: #05070a !important;
-    --minimal_dark_be_grey: transparent !important;
-    --minimal_dark_corner: 0px !important;
-
-    --ghost-accent-primary: #2563eb !important;
-    --ghost-accent-secondary: #3b82f6 !important;
-    --ghost-bg-base: #05070a !important;
-
-    --gpBackground-Store: #05070a !important;
-    --gpSystemDarkest: #05070a !important;
-    --gpSystemDarker: #080b10 !important;
-    --gpSystemDark: #0c0f17 !important;
-
-    --gpColor-Blue: #2563eb !important;
-    --gpColor-BlueHi: #3b82f6 !important;
-    --color-accent: #2563eb !important;
-
-    background-color: #05070a !important;
-    background: #05070a !important;
-}
-
-/* ==========================================================================
-   2. MAIN LIBRARY GRID CONTAINERS -> DEEP BLACKISH (#05070a)
-   ========================================================================== */
-
-body, html, .DesktopUI, .FullModalOverlay,
+/* Main Library Grid & Page Base -> Pitch Black */
+body, html, .DesktopUI,
+._3Sb2o_mQ30IDRh0C72QUUu,
+._3yX7xQ6-Q6o6t-9aNn5K,
 .u1xD3KJEgksF_J_5TLZzO,
 ._17uEBe5Ri8TMsnfELvs8-N,
-._2gSXCB6PbOlMxslr8hm6dm,
-._3C_3Y2u1k1O4p0,
-._3yX7xQ6-Q6o6t-9aNn5K,
 div[class*="library_AppGrid"],
-div[class*="library_CollectionGrid"],
-div[class*="library_LibraryHome"],
-div[class*="appdetails_"],
-div[class*="scroll_"],
-div[class*="collection_"],
-div[class*="whatsnew_"],
-div[class*="shelf_"] {
+div[class*="library_LibraryHome"] {
     background-color: #05070a !important;
     background: #05070a !important;
-    background-image: none !important;
 }
 
-/* ==========================================================================
-   3. SIDEBAR PANEL & SHARP EDGES
-   ========================================================================== */
-
-/* Main Sidebar Panel Base */
+/* EXCLUSIVE LEFT SIDEBAR COLUMN -> BRIGHT RED */
 ._3x1HklzyDs4TEjACrRO2tB,
-._2TKEazUUS3TlniZfpc8OOe,
-._3Sb2o_mQ30IDRh0C72QUUu,
 div[class*="library_AppListContainer"],
-div[class*="library_appList"],
-div[class*="library_LeftContainer"],
-.library_appListContainer {
-    background: #05070a !important;
-    border-right: 1px solid rgba(37, 99, 235, 0.2) !important;
+div[class*="library_appListContainer"] {
+    background-color: #ff0000 !important;
+    background: #ff0000 !important;
 }
 
-/* Strip solid background blocks from unselected rows & headers */
+/* Strip solid row fills so the red sidebar shows cleanly */
 ._3qwXPrhpZYqVbJxrZDrvjy,
 ._2sYIghGVXJr6tsQVvcryy8,
 .MyNb5dG3FsBnKdp8j_ntk,
-._2-O4ZG0KrnSrzISHBKctFQ,
-div[class*="CollectionHeader"],
-div[class*="collectionheader_"],
-div[class*="gamelistsection_"],
-div[class*="gamelistentry_"] {
+._2-O4ZG0KrnSrzISHBKctFQ {
     background: transparent !important;
     background-color: transparent !important;
-    background-image: none !important;
-    border-color: transparent !important;
-    border-radius: 0px !important;
-}
-
-/* Category Text (FAVOURITES, MP, ZETTLEKASTEN) */
-._3qwXPrhpZYqVbJxrZDrvjy,
-._2sYIghGVXJr6tsQVvcryy8,
-._2-O4ZG0KrnSrzISHBKctFQ,
-div[class*="CollectionHeader"] {
-    color: #cbd5e1 !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.5px !important;
-}
-
-/* Game Title Text Color */
-._2ws8DONH9fxQjPXEmRpujE,
-._5YTBr7WwIfzVU_3nUtAph {
-    color: #f1f5f9 !important;
-    opacity: 1 !important;
-}
-
-/* Category Header Hover State -> Sharp Edges */
-._2sYIghGVXJr6tsQVvcryy8:hover,
-div[class*="CollectionHeader"]:hover {
-    background: rgba(37, 99, 235, 0.12) !important;
-    border-radius: 0px !important;
-}
-
-/* Active Category Header (e.g. - ZETTLEKASTEN or + MP) -> Sharp Blue Glass */
-._3qwXPrhpZYqVbJxrZDrvjy._2zGph-MSF37bUmk_Qlu_XG,
-._2sYIghGVXJr6tsQVvcryy8._2zGph-MSF37bUmk_Qlu_XG,
-div[class*="CollectionHeader"][class*="selected"] {
-    background: rgba(37, 99, 235, 0.22) !important;
-    border-left: 3px solid #2563eb !important;
-    border-radius: 0px !important;
-}
-
-/* Search Bar Glass Input Container -> Sharp Edges */
-[class*="SearchFilterInput"],
-input[class*="searchFilterInput"] {
-    background: rgba(15, 23, 42, 0.6) !important;
-    border: 1px solid rgba(37, 99, 235, 0.25) !important;
-    backdrop-filter: blur(10px) !important;
-    border-radius: 0px !important;
-    color: #ffffff !important;
-}
-
-/* ==========================================================================
-   4. SELECTED GAME ITEM -> SHARP ROYAL BLUE GLASS HIGHLIGHT
-   ========================================================================== */
-
-._2-O4ZG0KrnSrzISHBKctFQ._3cMVyOc-9F9Jvp3uKF7_xj,
-._1UBpAXP408Ez_L_mXhW5Q9._2-O4ZG0KrnSrzISHBKctFQ,
-[class*="GameListItem"][class*="selected"],
-[class*="GameListItem"][class*="Selected"] {
-    background: linear-gradient(90deg, rgba(37, 99, 235, 0.35) 0%, rgba(59, 130, 246, 0.12) 100%) !important;
-    backdrop-filter: blur(12px) !important;
-    border-left: 3px solid #2563eb !important;
-    border-radius: 0px !important;
-    color: #ffffff !important;
-    box-shadow: inset 0 0 10px rgba(37, 99, 235, 0.25) !important;
-}
-
-/* Hover state on unselected game list items -> Sharp Edges */
-._2-O4ZG0KrnSrzISHBKctFQ:hover,
-[class*="GameListItem"]:hover {
-    color: #ffffff !important;
-    background: rgba(37, 99, 235, 0.15) !important;
-    border-radius: 0px !important;
-}
-
-/* ==========================================================================
-   5. TOP NAVIGATION BAR & ACTIVE TAB UNDERLINE (Royal Blue Accent)
-   ========================================================================== */
-
-div[class*="supernav_container"] a[class*="active"],
-a[class*="menuitem"][class*="active"],
-a.menuitem.active,
-._3j2xR0 {
-    color: #ffffff !important;
-    border-bottom: 2px solid #2563eb !important;
-    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45) !important;
-}
-
-div[class*="supernav_container"] a:hover,
-a[class*="menuitem"]:hover {
-    color: #3b82f6 !important;
-    text-shadow: 0 0 8px rgba(37, 99, 235, 0.5) !important;
-}
-
-/* ==========================================================================
-   6. ROYAL BLUE PLAY BUTTON (Sharp Edges)
-   ========================================================================== */
-
-button[class*="playbutton_PlayButton"],
-div[class*="playbutton_PlayButton"],
-.playButton {
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
-    border: none !important;
-    color: #ffffff !important;
-    font-weight: 800 !important;
-    border-radius: 0px !important;
-    box-shadow: 0 0 15px rgba(37, 99, 235, 0.45) !important;
-    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-}
-
-button[class*="playbutton_PlayButton"]:hover,
-.playButton:hover {
-    transform: translateY(-2px) scale(1.02) !important;
-    box-shadow: 0 0 25px rgba(37, 99, 235, 0.75) !important;
-    filter: brightness(1.15) !important;
 }

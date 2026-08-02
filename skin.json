@@ -12,12 +12,12 @@
 
 	"Patches": [
 		{
-			"MatchRegexString": "^Steam$",
-			"TargetCss": "libraryroot.custom.css"
-		},
-		{
 			"MatchRegexString": ".*",
 			"TargetCss": "webkit.css"
+		},
+		{
+			"MatchRegexString": "^Steam$",
+			"TargetCss": "libraryroot.custom.css"
 		}
 	]
 }

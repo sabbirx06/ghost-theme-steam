@@ -1,23 +1,17 @@
 /* ==========================================================================
-   👻 GHOST STEAM THEME - WEBKIT & COLOR TOKENS (webkit.css)
-   ==========================================================================
-   Blackish Background (#05070a) with Royal Blue Accent (#2563eb).
+   👻 EXCLUSIVE SIDEBAR TARGETING TEST (webkit.css)
    ========================================================================== */
 
-:root {
-    /* Royal Blue Primary & Secondary Accents */
-    --ghost-accent-primary: #2563eb !important;
-    --ghost-accent-secondary: #3b82f6 !important;
+/* Outer Shell Base */
+body, html, .DesktopUI {
+    background-color: #05070a !important;
+    background: #05070a !important;
+}
 
-    /* Blackish Background Palette */
-    --ghost-bg-base: #05070a !important;
-    --ghost-bg-surface: #0a0d14 !important;
-    --ghost-bg-card: #0f131f !important;
-
-    /* Text Colors */
-    --ghost-text-primary: #f8fafc !important;
-    --ghost-text-secondary: #94a3b8 !important;
-
-    /* Revert Font to Steam Default */
-    --ghost-font-main: inherit !important;
+/* EXCLUSIVE LEFT SIDEBAR COLUMN -> BRIGHT RED */
+._3x1HklzyDs4TEjACrRO2tB,
+div[class*="library_AppListContainer"],
+div[class*="library_appListContainer"] {
+    background-color: #ff0000 !important;
+    background: #ff0000 !important;
 }
