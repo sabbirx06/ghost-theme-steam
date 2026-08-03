@@ -34,7 +34,8 @@
 		},
 		{
 			"MatchRegexString": "^Steam$",
-			"TargetCss": "libraryroot.custom.css"
+			"TargetCss": "libraryroot.custom.css",
+			"TargetJs": "webkit.js"
 		}
 	]
 }

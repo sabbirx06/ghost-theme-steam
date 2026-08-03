@@ -1,25 +1,26 @@
-#!/usr/bin/env fish
+#!/usr/bin/env bash
 
 echo "Stopping Steam..."
-# Kill by process name (not -f) to avoid matching this script's own path
-pkill -TERM steam 2>/dev/null; or true
-pkill -TERM steamwebhelper 2>/dev/null; or true
+pkill -TERM -x steam 2>/dev/null || true
+pkill -TERM -f steamwebhelper 2>/dev/null || true
 
-# Wait until steam is fully gone
-for i in (seq 1 15)
-    sleep 1
-    if not pgrep -x steam > /dev/null 2>&1
+for i in {1..10}; do
+    if ! pgrep -x steam > /dev/null 2>&1; then
         break
-    end
+    fi
     echo "Waiting for Steam to exit... ($i)"
-end
+    sleep 1
+done
 
-# Force kill anything remaining
-pkill -9 steam 2>/dev/null; or true
-pkill -9 steamwebhelper 2>/dev/null; or true
+pkill -9 -x steam 2>/dev/null || true
+pkill -9 -f steamwebhelper 2>/dev/null || true
 sleep 1
 
-echo "Relaunching Steam..."
-nohup /usr/bin/steam -silent > /tmp/steam_restart.log 2>&1 &
+echo "Relaunching Steam in Desktop session..."
+if command -v systemd-run >/dev/null 2>&1; then
+    systemd-run --user --unit=steam-desktop-app /usr/bin/steam steam://open/main >/dev/null 2>&1 || true
+else
+    DISPLAY=${DISPLAY:-:0} WAYLAND_DISPLAY=${WAYLAND_DISPLAY:-wayland-0} nohup /usr/bin/steam steam://open/main > /tmp/steam_restart.log 2>&1 & disown
+fi
 
 echo "Steam relaunched."
