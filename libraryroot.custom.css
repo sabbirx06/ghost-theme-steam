@@ -178,19 +178,19 @@ html body.DesktopUI div[class*="library_LibraryHome"] {
 }
 
 /* ============================================================
-   2. ELEVATED PITCH-BLACK SHELF CARDS
+   2. ELEVATED FROSTED GLASS SHELF CARDS
    ============================================================ */
 
 html body.DesktopUI ._17uEBe5Ri8TMsnfELvs8-N,
 html body.DesktopUI ._2tC_c87MH67xQM7Y0pVyXm {
-    background: rgba(8, 14, 26, 0.7) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border-radius: 8px !important;
-    border: 1px solid rgba(255, 255, 255, 0.04) !important;
+    background: rgba(255, 255, 255, 0.04) !important; /* Neutral smoky glass to contrast against pitch black */
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
     margin: 10px 14px !important;
     padding: 14px 16px !important;
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.06), 0 12px 40px rgba(0, 0, 0, 0.7) !important;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 12px 40px rgba(0, 0, 0, 0.8) !important;
     position: relative !important;
 }
 
