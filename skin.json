@@ -5,10 +5,27 @@
 	"Author": "Ghost",
 	"version": "1.0.0",
 	"Version": "1.0.0",
-	"description": "Custom Steam Ghost Theme with Blackish background and Royal Blue accent.",
+	"description": "Custom Steam Ghost Theme with Slate/Navy background and Royal Blue & Cyan accents.",
 
 	"Steam-WebKit": "webkit.css",
 	"UseDefaultPatches": false,
+
+	"Conditions": {
+		"Hide What's New": {
+			"description": "Hide the What's New section from the Steam Library",
+			"default": "No",
+			"tab": "Library",
+			"values": {
+				"No": {},
+				"Yes": {
+					"TargetCss": {
+						"affects": ["^Steam$"],
+						"src": "options/hideWhatsNew.css"
+					}
+				}
+			}
+		}
+	},
 
 	"Patches": [
 		{

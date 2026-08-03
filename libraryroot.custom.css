@@ -2,110 +2,189 @@
    👻 GHOST STEAM THEME - STEAM LIBRARY PAGE (libraryroot.custom.css)
    ==========================================================================
    Target: Steam Library Page Only (^Steam$)
-   Right Grid & ALL Shelves: Pitch Black (#05070a)
-   Left Sidebar Column: Grey-Blackish Glass (#0d121f)
-   Accent: Royal Blue (#2563eb)
-
-   SPECIFICITY NOTE: All right-panel rules use html body.DesktopUI prefix to
-   beat Minimal Dark's own !important rules in the cascade.
+   Background: Unified Dark Navy Slate (#0a0e1a) — Matches Left Sidebar
+   Shelf Cards: Elevated Dark Slate (#111728) with Royal Blue Glass Rim
+   Accents: Royal Blue (#2563eb) & Cyan (#00d4ff)
    ========================================================================== */
 
 /* ============================================================
-   1. NUCLEAR SPECIFICITY - RIGHT PANEL PITCH BLACK
-   Prefixing with html body.DesktopUI gives us 3 extra specificity points
-   over Minimal Dark's rules, ensuring we always win.
+   TOGGLE: HIDE WHAT'S NEW SECTION
+   Uncomment line below to hide What's New completely via CSS,
+   or use Millennium Theme Settings -> Hide What's New toggle.
+   ============================================================ */
+/* html body.DesktopUI ._17uEBe5Ri8TMsnfELvs8-N { display: none !important; } */
+
+/* ============================================================
+   HIDE SCROLL TO TOP OVERLAY BUTTON BAR
+   ============================================================ */
+html body.DesktopUI ._1J21tLst5SEhBPkVRT53UV,
+html body.DesktopUI ._28ZR8gHitOrJaSLxcIAl2p,
+html body.DesktopUI div:has(> ._1J21tLst5SEhBPkVRT53UV),
+html body.DesktopUI div:has(> ._1J21tLst5SEhBPkVRT53UV._28ZR8gHitOrJaSLxcIAl2p),
+html body.DesktopUI div[class*="ScrollToTop"],
+html body.DesktopUI div[class*="scrollToTop"],
+html body.DesktopUI div[class*="backToTop"],
+html body.DesktopUI div[class*="BackToTop"],
+html body.DesktopUI div[class*="scrolltop"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* ============================================================
+   1. UNIFIED PAGE CANVAS (#0a0e1a) — MATCHES LEFT SIDEBAR
    ============================================================ */
 
-/* Root page wrappers */
+/* Root page & Outer scroll wrappers — Unified Dark Navy Slate */
 html body.DesktopUI ._2gSXCB6PbOlMxslr8hm6dm,
 html body.DesktopUI .u1xD3KJEgksF_J_5TLZzO,
 html body.DesktopUI ._2sNr7PFYcJZWNkEMCDVVPR,
 html body.DesktopUI ._2AUVZlzQq67qe3yhLZsPPB,
-html body.DesktopUI ._2Z9gJ6Pd7eZn-kfODcXJuR {
-    background-color: #05070a !important;
-    background: #05070a !important;
-    background-image: none !important;
-}
-
-/* What's New section */
-html body.DesktopUI ._17uEBe5Ri8TMsnfELvs8-N {
-    background-color: #05070a !important;
-    background: #05070a !important;
-    background-image: none !important;
-}
-
-/* Main shelf container (Minimal Dark sets this to --minimal_dark_be_grey #262626) */
-html body.DesktopUI ._3pofGqV0buiKAfMPEs3_82 {
-    background-color: #05070a !important;
-    background: #05070a !important;
-    background-image: none !important;
-}
-
-/* Secondary shelf collection backgrounds */
-html body.DesktopUI ._2y2tUbsMx8OIwkimGSyHmb {
-    background-color: #05070a !important;
-    background: #05070a !important;
-    background-image: none !important;
-}
-
-/* Shelf grid wrapper (_1ZpBQtDqcKBbfIIv01Vs1R) */
-html body.DesktopUI ._1ZpBQtDqcKBbfIIv01Vs1R,
-html body.DesktopUI ._1ZpBQtDqcKBbfIIv01Vs1R > div {
-    background-color: #05070a !important;
-    background: #05070a !important;
-    background-image: none !important;
-}
-
-/* Game shelf containers */
-html body.DesktopUI ._2tC_c87MH67xQM7Y0pVyXm,
-html body.DesktopUI ._23SnllqT_AqZ1C_QHcNQ4Z,
-html body.DesktopUI ._3fiHsLeD_6rtm6bM9lHlVL,
-html body.DesktopUI ._1RLnyCu6_DW-NTlpHTBhig,
-html body.DesktopUI ._3C_3Y2u1k1O4p0,
-html body.DesktopUI ._3yX7xQ6-Q6o6t-9aNn5K,
-html body.DesktopUI ._3Sb2o_mQ30IDRh0C72QUUu,
-html body.DesktopUI ._3YO5BpDmZERh_G8kaWbaSJ,
+html body.DesktopUI ._2Z9gJ6Pd7eZn-kfODcXJuR,
+html body.DesktopUI ._3pofGqV0buiKAfMPEs3_82,
+html body.DesktopUI ._2y2tUbsMx8OIwkimGSyHmb,
 html body.DesktopUI ._2Dd4T78PcCTUVgOtDGFY5j,
-html body.DesktopUI ._2Nq6ov7A1hGcHXVOXNt_OE {
-    background-color: #05070a !important;
-    background: #05070a !important;
-    background-image: none !important;
-}
-
-/* Add shelf row container and inner bar */
-html body.DesktopUI ._3SkuN_ykQuWGF94fclHdhJ,
-html body.DesktopUI ._3SkuN_ykQuWGF94fclHdhJ ._2aw5aUUo3lrK6wxJb4_ms5 {
-    background-color: #05070a !important;
-    background: #05070a !important;
-    background-image: none !important;
-}
-
-/* Broad attribute selectors for obfuscated library classes */
-html body.DesktopUI div[class*="library_AppGrid"],
-html body.DesktopUI div[class*="library_CollectionGrid"],
-html body.DesktopUI div[class*="library_LibraryHome"],
+html body.DesktopUI ._2Nq6ov7A1hGcHXVOXNt_OE,
 html body.DesktopUI div[class*="library_CollectionSection"],
 html body.DesktopUI div[class*="library_Container"],
-html body.DesktopUI div[class*="shelf_"] {
-    background-color: #05070a !important;
-    background: #05070a !important;
+html body.DesktopUI div[class*="library_LibraryHome"] {
+    background-color: #0a0e1a !important;
+    background: #0a0e1a !important;
     background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 /* ============================================================
-   2. EXCLUSIVE LEFT SIDEBAR COLUMN (#0d121f)
+   2. ELEVATED SHELF CARDS (#111728) WITH BLUE/SLATE GLASS RIM
+   Restored distinct card containers around What's New & Game Shelves
+   ============================================================ */
+
+html body.DesktopUI ._17uEBe5Ri8TMsnfELvs8-N,
+html body.DesktopUI ._2tC_c87MH67xQM7Y0pVyXm {
+    background-color: #111728 !important;
+    background: #111728 !important;
+    background-image: none !important;
+    border-radius: 6px !important;
+    border: 1px solid rgba(37, 99, 235, 0.15) !important;
+    margin: 10px 14px !important;
+    padding: 14px 16px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Inner shelf child elements — completely transparent so card background shows */
+html body.DesktopUI ._1ZpBQtDqcKBbfIIv01Vs1R,
+html body.DesktopUI ._1ZpBQtDqcKBbfIIv01Vs1R > div,
+html body.DesktopUI ._1ZtpSq62fy_8W-_0pMn5cu,
+html body.DesktopUI ._23SnllqT_AqZ1C_QHcNQ4Z,
+html body.DesktopUI ._3fiHsLeD_6rtm6bM9lHlVL,
+html body.DesktopUI ._1RLnyCu6_DW-NTlpHTBhig,
+html body.DesktopUI ._3Sb2o_mQ30IDRh0C72QUUu,
+html body.DesktopUI ._3YO5BpDmZERh_G8kaWbaSJ,
+html body.DesktopUI ._3C_3Y2u1k1O4p0,
+html body.DesktopUI ._3yX7xQ6-Q6o6t-9aNn5K,
+html body.DesktopUI .V7RuDNUxhxoBRaiGWbk3B,
+html body.DesktopUI .DGRkX_HYUzbFaqRysWQVi,
+html body.DesktopUI div[class*="library_AppGrid"],
+html body.DesktopUI div[class*="library_CollectionGrid"],
+html body.DesktopUI div[class*="library_Grid"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* ============================================================
+   3. BOTTOM STATUS BAR & FOOTER (#0a0e1a) — REMOVES BLACK BAR
+   ============================================================ */
+
+html body.DesktopUI ._3cykd-VfN_xBxf3Qxriccm,
+html body.DesktopUI ._1ijTaXJJA5YWl_fW2IxcaT,
+html body.DesktopUI ._3vCzSrrXZzZjVJFZNg9SGu,
+html body.DesktopUI ._1_yS5UP7el0aN4vntx3dx,
+html body.DesktopUI div[class*="bottombar_"],
+html body.DesktopUI div[class*="footer_"],
+html body.DesktopUI div[class*="downloads_"] {
+    background-color: #0a0e1a !important;
+    background: #0a0e1a !important;
+    background-image: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ============================================================
+   4. GAME POSTER CAPSULES — 4PX BORDER RADIUS
+   ============================================================ */
+
+html body.DesktopUI ._1ZtpSq62fy_8W-_0pMn5cu,
+html body.DesktopUI ._1ZpBQtDqcKBbfIIv01Vs1R img,
+html body.DesktopUI div[class*="library_AppCapsule"],
+html body.DesktopUI img[class*="library_AppCapsule"],
+html body.DesktopUI div[class*="appportrait_"],
+html body.DesktopUI div[class*="library_AppGrid"] img,
+html body.DesktopUI div[class*="library_CollectionGrid"] img {
+    border-radius: 4px !important;
+    overflow: hidden !important;
+}
+
+/* ============================================================
+   5. ADD SHELF BUTTON — ROYAL BLUE + CYAN GRADIENT
+   ============================================================ */
+
+html body.DesktopUI ._3SkuN_ykQuWGF94fclHdhJ,
+html body.DesktopUI ._3SkuN_ykQuWGF94fclHdhJ ._2aw5aUUo3lrK6wxJb4_ms5 {
+    background: rgba(17, 23, 40, 0.7) !important;
+    background-color: rgba(17, 23, 40, 0.7) !important;
+    border: 1px dashed rgba(0, 212, 255, 0.3) !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease-out !important;
+}
+
+html body.DesktopUI ._3SkuN_ykQuWGF94fclHdhJ ._2aw5aUUo3lrK6wxJb4_ms5 {
+    color: #38bdf8 !important;
+    background: linear-gradient(135deg, #2563eb 0%, #00d4ff 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Add shelf icon — Cyan */
+html body.DesktopUI ._3SkuN_ykQuWGF94fclHdhJ svg {
+    fill: #00d4ff !important;
+    stroke: #00d4ff !important;
+    color: #00d4ff !important;
+}
+
+/* Add shelf hover state */
+html body.DesktopUI ._3SkuN_ykQuWGF94fclHdhJ:hover,
+html body.DesktopUI ._3SkuN_ykQuWGF94fclHdhJ ._2aw5aUUo3lrK6wxJb4_ms5:hover {
+    border-color: #00d4ff !important;
+    box-shadow: 0 0 14px rgba(0, 212, 255, 0.3) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* ============================================================
+   6. EXCLUSIVE LEFT SIDEBAR COLUMN (#0a0e1a)
    ============================================================ */
 
 html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB,
 html body.DesktopUI div[class*="library_AppListContainer"],
 html body.DesktopUI div[class*="library_appListContainer"] {
-    background-color: #0d121f !important;
-    background: #0d121f !important;
-    border-right: 1px solid rgba(37, 99, 235, 0.25) !important;
-    box-shadow: 6px 0 24px rgba(0, 0, 0, 0.7) !important;
+    background: #0a0e1a !important;
+    background-color: #0a0e1a !important;
+    border-right: 1px solid rgba(37, 99, 235, 0.18) !important;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6) !important;
 }
 
-/* Sidebar list entries - transparent so #0d121f shows through */
+/* Sidebar list entries */
 html body.DesktopUI ._3qwXPrhpZYqVbJxrZDrvjy,
 html body.DesktopUI ._2sYIghGVXJr6tsQVvcryy8,
 html body.DesktopUI .MyNb5dG3FsBnKdp8j_ntk,
@@ -125,9 +204,9 @@ html body.DesktopUI div[class*="gamelistentry_"] {
 html body.DesktopUI ._3qwXPrhpZYqVbJxrZDrvjy,
 html body.DesktopUI ._2sYIghGVXJr6tsQVvcryy8,
 html body.DesktopUI .MyNb5dG3FsBnKdp8j_ntk {
-    background: #111728 !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important;
+    background: rgba(15, 22, 42, 0.9) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.04) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25) !important;
 }
 
 /* Selected Category Header - Royal Blue Glass */
@@ -148,11 +227,9 @@ html body.DesktopUI div[class*="CollectionHeader"] {
 }
 
 /* ============================================================
-   3. GAME LIST ENTRY HOVER — Z-AXIS LIFT EFFECT
-   Item pops toward the viewer: slides right, scales, glows, casts shadow
+   7. GAME LIST ENTRY HOVER — Z-AXIS LIFT EFFECT
    ============================================================ */
 
-/* Base state — enable smooth transitions on all game entries */
 html body.DesktopUI ._3IWn-2rn7x98o5fDd0rAxb,
 html body.DesktopUI ._2-O4ZG0KrnSrzISHBKctFQ {
     transition:
@@ -166,7 +243,6 @@ html body.DesktopUI ._2-O4ZG0KrnSrzISHBKctFQ {
     z-index: 0;
 }
 
-/* HOVER — fluent lift out of screen */
 html body.DesktopUI ._3IWn-2rn7x98o5fDd0rAxb:hover,
 html body.DesktopUI ._2-O4ZG0KrnSrzISHBKctFQ:hover {
     transform: perspective(600px) translateZ(18px) !important;
@@ -180,7 +256,7 @@ html body.DesktopUI ._2-O4ZG0KrnSrzISHBKctFQ:hover {
 }
 
 /* ============================================================
-   4. SELECTED GAME -> ROYAL BLUE GLASS HIGHLIGHT
+   8. SELECTED GAME -> ROYAL BLUE GLASS HIGHLIGHT
    ============================================================ */
 
 html body.DesktopUI ._2-O4ZG0KrnSrzISHBKctFQ._3cMVyOc-9F9Jvp3uKF7_xj,
@@ -192,21 +268,8 @@ html body.DesktopUI ._1UBpAXP408Ez_L_mXhW5Q9._2-O4ZG0KrnSrzISHBKctFQ {
     box-shadow: inset 0 0 10px rgba(37, 99, 235, 0.25) !important;
 }
 
-html body.DesktopUI ._2-O4ZG0KrnSrzISHBKctFQ:hover {
-    background: rgba(37, 99, 235, 0.15) !important;
-    border-radius: 0px !important;
-}
-
 /* ============================================================
-   4. SHARP EDGES
-   ============================================================ */
-
-:root {
-    --minimal_dark_corner: 0px !important;
-}
-
-/* ============================================================
-   5. ROYAL BLUE PLAY BUTTON
+   9. ROYAL BLUE PLAY BUTTON
    ============================================================ */
 
 html body.DesktopUI button[class*="playbutton_PlayButton"],

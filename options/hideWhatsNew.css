@@ -1,0 +1,4 @@
+/* Hide What's New section completely */
+html body.DesktopUI ._17uEBe5Ri8TMsnfELvs8-N {
+    display: none !important;
+}
