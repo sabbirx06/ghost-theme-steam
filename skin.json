@@ -8,7 +8,7 @@
 	"description": "Custom Steam Ghost Theme with Blackish background and Royal Blue accent.",
 
 	"Steam-WebKit": "webkit.css",
-	"UseDefaultPatches": true,
+	"UseDefaultPatches": false,
 
 	"Patches": [
 		{

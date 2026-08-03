@@ -1,37 +1,12 @@
 /* ==========================================================================
-   👻 GHOST STEAM THEME - MASTER WEBKIT & SIDEBAR STYLES (webkit.css)
+   👻 GHOST STEAM THEME - MASTER WEBKIT (webkit.css)
+   Injected into all Steam frames via "Steam-WebKit": "webkit.css"
+   DO NOT add page-specific background rules here - they bleed into
+   Community/Store/Market pages!
    ========================================================================== */
 
-:root, html.DesktopUI, body, html, .FullModalOverlay, .GamepadUI {
-    --minimal_dark_blacker: #05070a !important;
-    --minimal_dark_blacker_alt: #05070a !important;
-    --minimal_dark_black: #05070a !important;
-    --minimal_dark_be_grey: #05070a !important;
-    --minimal_dark_corner: 0px !important;
-
-    --ghost-accent-primary: #2563eb !important;
-    --ghost-accent-secondary: #3b82f6 !important;
-
-    --gpBackground-Store: #05070a !important;
-    --gpSystemDarkest: #05070a !important;
-    --gpSystemDarker: #080b10 !important;
-    --gpSystemDark: #0c0f17 !important;
-
-    --gpColor-Blue: #2563eb !important;
-    --gpColor-BlueHi: #3b82f6 !important;
-    --color-accent: #2563eb !important;
-
-    --ghost-font-main: inherit !important;
-
-    background-color: #05070a !important;
-    background: #05070a !important;
-}
-
-/* EXCLUSIVE LEFT SIDEBAR COLUMN STYLES */
-._3x1HklzyDs4TEjACrRO2tB,
-div[class*="library_AppListContainer"],
-div[class*="library_appListContainer"] {
-    background: #0d121f !important;
-    background-color: #0d121f !important;
-    border-right: 1px solid rgba(37, 99, 235, 0.25) !important;
+:root {
+    --ghost-accent-primary: #2563eb;
+    --ghost-accent-secondary: #3b82f6;
+    --ghost-bg-base: #05070a;
 }
