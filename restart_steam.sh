@@ -18,9 +18,9 @@ sleep 1
 
 echo "Relaunching Steam in Desktop session..."
 if command -v systemd-run >/dev/null 2>&1; then
-    systemd-run --user --unit=steam-desktop-app /usr/bin/steam steam://open/main >/dev/null 2>&1 || true
+    systemd-run --user --unit=steam-desktop-app /usr/bin/steam -dev steam://open/main >/dev/null 2>&1 || true
 else
-    DISPLAY=${DISPLAY:-:0} WAYLAND_DISPLAY=${WAYLAND_DISPLAY:-wayland-0} nohup /usr/bin/steam steam://open/main > /tmp/steam_restart.log 2>&1 & disown
+    DISPLAY=${DISPLAY:-:0} WAYLAND_DISPLAY=${WAYLAND_DISPLAY:-wayland-0} nohup /usr/bin/steam -dev steam://open/main > /tmp/steam_restart.log 2>&1 & disown
 fi
 
 echo "Steam relaunched."

@@ -609,18 +609,14 @@ div[class*="shelf_"] {
 ._1ZtpSq62fy_8W-_0pMn5cu,
 ._3C_3Y2u1k1O4p0,
 a[href*="/app/"],
-div[class*="appportrait_"],
-div[class*="AppPortrait"],
-div[class*="library_AppCapsule"],
-div[class*="appcapsule_"],
-div[class*="AppCapsule"],
 div[class*="library_AppGrid"] > div,
 div[class*="library_CollectionGrid"] > div {
     border-radius: 4px !important;
-    overflow: hidden !important;
-    border: 1px solid rgba(56, 189, 248, 0.2) !important;
+    overflow: visible !important;
+    isolation: isolate !important;
+    border: none !important;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6) !important;
-    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease, border-color 0.28s ease !important;
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease !important;
     position: relative !important;
     will-change: transform, box-shadow !important;
 }
@@ -629,10 +625,13 @@ div[class*="library_CollectionGrid"] > div {
 ._1ZpBQtDqcKBbfIIv01Vs1R img,
 ._1ZtpSq62fy_8W-_0pMn5cu img,
 ._3C_3Y2u1k1O4p0 img,
-div[class*="appportrait_"] img,
-div[class*="AppPortrait"] img {
-    border-radius: 3px !important;
+div[class*="library_AppGrid"] > div img,
+div[class*="library_CollectionGrid"] > div img {
+    border-radius: 4px !important;
     overflow: hidden !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
 }
 
 /* FUT Card Hover — Smooth Pop-Out Animation & Glowing Blue Border Wrap */
@@ -640,16 +639,10 @@ div[class*="AppPortrait"] img {
 ._1ZtpSq62fy_8W-_0pMn5cu:hover,
 ._3C_3Y2u1k1O4p0:hover,
 a[href*="/app/"]:hover,
-div[class*="appportrait_"]:hover,
-div[class*="AppPortrait"]:hover,
-div[class*="library_AppCapsule"]:hover,
-div[class*="appcapsule_"]:hover,
-div[class*="AppCapsule"]:hover,
 div[class*="library_AppGrid"] > div:hover,
 div[class*="library_CollectionGrid"] > div:hover {
     transform: translateY(-8px) scale(1.05) !important;
     z-index: 99999 !important;
-    border-color: transparent !important;
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85), 0 0 25px rgba(56, 189, 248, 0.4) !important;
 }
 
@@ -658,25 +651,15 @@ div[class*="library_CollectionGrid"] > div:hover {
 ._1ZtpSq62fy_8W-_0pMn5cu:hover::before,
 ._3C_3Y2u1k1O4p0:hover::before,
 a[href*="/app/"]:hover::before,
-div[class*="appportrait_"]:hover::before,
-div[class*="AppPortrait"]:hover::before,
-div[class*="library_AppCapsule"]:hover::before,
-div[class*="appcapsule_"]:hover::before,
-div[class*="AppCapsule"]:hover::before,
 div[class*="library_AppGrid"] > div:hover::before,
 div[class*="library_CollectionGrid"] > div:hover::before {
     content: "" !important;
     position: absolute !important;
-    inset: 0 !important;
-    border-radius: 4px !important;
-    padding: 2px !important;
-    box-sizing: border-box !important;
+    inset: -2px !important;
+    border-radius: 6px !important;
     background: conic-gradient(from var(--beam-angle), transparent 20%, rgba(34, 211, 238, 0.4) 50%, rgba(56, 189, 248, 1) 80%, rgba(37, 99, 235, 1) 100%) !important;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
-    -webkit-mask-composite: xor !important;
-    mask-composite: exclude !important;
     animation: ghostBorderBeam 2s linear infinite !important;
-    z-index: 999 !important;
+    z-index: -1 !important;
     pointer-events: none !important;
 }
 
