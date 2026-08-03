@@ -465,21 +465,31 @@ body.ContextMenuPopupBody [role="menuitem"]:hover {
     color: #ffffff !important;
 }
 
-/* Market Header Pitch Black */
+/* Market Header Visually Separated (Glassmorphic) */
 html body .market_header_bg {
-    background: #05070a !important;
-    background-color: #05070a !important;
+    background: rgba(15, 23, 42, 0.6) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 0 !important;
+    margin-bottom: 16px !important;
 }
 
 /* Glassmorphic Wallet Balance Box */
 html body .market_header_bg .user_info {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: rgba(37, 99, 235, 0.15) !important;
+    border: 1px solid rgba(34, 211, 238, 0.2) !important;
     border-radius: 0 !important; /* Sharp 90 degree edges */
     padding: 8px 16px !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+html body #marketWalletBalanceAmount {
+    color: #22d3ee !important; /* Cyan accent color */
+    font-weight: bold !important;
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.4) !important;
 }
 
 /* Browse by Game Side Buttons - Glassmorphic */
@@ -551,26 +561,140 @@ html body .market_tab_well_tab:hover {
 
 /* Market Active Tab Background */
 html body .market_tab_well_tab_active,
-html body .market_tab_well_tab_active * {
+html.responsive body.responsive_page .market_tab_well_tab_active,
+html body .market_tab_well_tab_active *,
+html.responsive body.responsive_page .market_tab_well_tab_active * {
     background-image: none !important;
     background-color: transparent !important;
     border: none !important;
 }
 
-html body .market_tab_well_tab_active {
+html body .market_tab_well_tab_active,
+html.responsive body.responsive_page .market_tab_well_tab_active {
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.5), rgba(34, 211, 238, 0.5)) !important;
     border-radius: 0 !important;
 }
 
-/* Green Action Buttons (Sell an Item) to Accent Color */
-html body .btn_green_white_innerfade, 
-html body .btn_green_white_innerfade * {
+@property --market-beam {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@keyframes marketBeamAnim {
+    from { --market-beam: 0deg; }
+    to { --market-beam: 360deg; }
+}
+
+/* Green Action Buttons (Sell an Item, Buy Now) with Beam Border */
+html body a.btn_green_white_innerfade, 
+html.responsive body.responsive_page a.btn_green_white_innerfade,
+html body div.market_content_block a.btn_green_white_innerfade,
+html body div#market_buyorder_info a.btn_green_white_innerfade {
+    background-image: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    position: relative !important;
+    border-radius: 4px !important;
+    padding: 1px !important;
+    background: conic-gradient(from var(--market-beam), transparent 20%, rgba(16, 185, 129, 0.4) 50%, rgba(52, 211, 153, 1) 80%, rgba(255, 255, 255, 1) 100%) !important;
+    animation: marketBeamAnim 2s linear infinite !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+}
+
+html body a.btn_green_white_innerfade *,
+html.responsive body.responsive_page a.btn_green_white_innerfade * {
     background-image: none !important;
     background-color: transparent !important;
     border: none !important;
 }
 
-html body .btn_green_white_innerfade {
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.5), rgba(34, 211, 238, 0.5)) !important;
+html body a.btn_green_white_innerfade span,
+html.responsive body.responsive_page a.btn_green_white_innerfade span,
+html body div.market_content_block a.btn_green_white_innerfade span,
+html body div#market_buyorder_info a.btn_green_white_innerfade span {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #064e3b !important; /* Dark emerald background */
+    color: #ffffff !important;
+    font-weight: bold !important;
+    border-radius: 3px !important;
+    padding: 0 16px !important;
+    height: 100% !important;
+    min-height: 30px !important;
+    box-sizing: border-box !important;
+    transition: background 0.2s ease !important;
+}
+
+html body a.btn_green_white_innerfade:hover span,
+html.responsive body.responsive_page a.btn_green_white_innerfade:hover span {
+    background: #047857 !important; /* Lighter emerald on hover */
+}
+
+/* ====== COMMUNITY MARKET BODY & LISTINGS ====== */
+
+:root {
+    --market-warning-display: none; /* Change to 'block' to show the beta warning */
+}
+
+/* Hide the Market Beta Warning */
+html body #market_notice,
+html body .market_notice,
+html body div:has(> a[href*="steamcommunity.com/groups/community_market"]) {
+    display: var(--market-warning-display, none) !important;
+}
+
+/* Market Page Global Background - Pitch Black with Accent Sun Shining Radial Gradient */
+html body.responsive_page,
+html body .responsive_page_content,
+html body .responsive_page_template_content,
+html body .pagecontent,
+html body #BG_bottom {
+    background-color: #020408 !important;
+    background-image: radial-gradient(ellipse 100% 120% at 50% 0%, rgba(37, 99, 235, 0.25) 0%, rgba(29, 78, 216, 0.10) 40%, rgba(2, 4, 8, 1) 100%) !important;
+    background-attachment: fixed !important;
+}
+
+/* Market Listings - Separated Glassmorphic Cards */
+html body .market_listing_row {
+    background: rgba(15, 23, 42, 0.6) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 0 !important; /* NO ROUNDED CORNERS! */
+    margin-bottom: 8px !important;
+    transition: all 0.2s ease !important;
+}
+
+html body .market_listing_row:hover {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(34, 211, 238, 0.25)) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Empty Listing Messages */
+html body .market_listing_table_message {
+    background: rgba(15, 23, 42, 0.6) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
     border-radius: 0 !important;
+    padding: 16px !important;
+    margin-top: 8px !important;
+    margin-bottom: 16px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Strip native backgrounds from inner spans to allow blur to show */
+html body .market_listing_row .market_listing_right_cell,
+html body .market_listing_row .market_listing_item_name_block {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Market Listing Headers */
+html body .market_listing_table_header {
+    background: transparent !important;
+    border: none !important;
+    color: rgba(255, 255, 255, 0.7) !important;
 }
