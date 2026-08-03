@@ -589,7 +589,10 @@ html.responsive body.responsive_page .market_tab_well_tab_active {
 html body a.btn_green_white_innerfade, 
 html.responsive body.responsive_page a.btn_green_white_innerfade,
 html body div.market_content_block a.btn_green_white_innerfade,
-html body div#market_buyorder_info a.btn_green_white_innerfade {
+html body div#market_buyorder_info a.btn_green_white_innerfade,
+html body a.item_market_action_button.item_market_action_button_green,
+html body a[href*="SellItemDialog"],
+html body a[href*="BuyItemDialog"] {
     background-image: none !important;
     background-color: transparent !important;
     border: none !important;
@@ -603,7 +606,10 @@ html body div#market_buyorder_info a.btn_green_white_innerfade {
 }
 
 html body a.btn_green_white_innerfade *,
-html.responsive body.responsive_page a.btn_green_white_innerfade * {
+html.responsive body.responsive_page a.btn_green_white_innerfade *,
+html body a.item_market_action_button.item_market_action_button_green *,
+html body a[href*="SellItemDialog"] *,
+html body a[href*="BuyItemDialog"] * {
     background-image: none !important;
     background-color: transparent !important;
     border: none !important;
@@ -612,7 +618,10 @@ html.responsive body.responsive_page a.btn_green_white_innerfade * {
 html body a.btn_green_white_innerfade span,
 html.responsive body.responsive_page a.btn_green_white_innerfade span,
 html body div.market_content_block a.btn_green_white_innerfade span,
-html body div#market_buyorder_info a.btn_green_white_innerfade span {
+html body div#market_buyorder_info a.btn_green_white_innerfade span,
+html body a.item_market_action_button.item_market_action_button_green span.item_market_action_button_contents,
+html body a[href*="SellItemDialog"] span,
+html body a[href*="BuyItemDialog"] span {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -627,33 +636,50 @@ html body div#market_buyorder_info a.btn_green_white_innerfade span {
     transition: background 0.2s ease !important;
 }
 
+html body a.item_market_action_button.item_market_action_button_green span.item_market_action_button_edge {
+    padding: 0 !important;
+    display: block !important;
+    height: 100% !important;
+}
+
 html body a.btn_green_white_innerfade:hover span,
-html.responsive body.responsive_page a.btn_green_white_innerfade:hover span {
+html.responsive body.responsive_page a.btn_green_white_innerfade:hover span,
+html body a.item_market_action_button.item_market_action_button_green:hover span.item_market_action_button_contents,
+html body a[href*="SellItemDialog"]:hover span,
+html body a[href*="BuyItemDialog"]:hover span {
     background: #047857 !important; /* Lighter emerald on hover */
 }
 
 /* ====== COMMUNITY MARKET BODY & LISTINGS ====== */
 
-:root {
-    --market-warning-display: none; /* Change to 'block' to show the beta warning */
-}
+/* ============================================================
+   TOGGLE: HIDE MARKET BETA WARNING
+   Comment out the line below to show the Market Beta Warning box again.
+   ============================================================ */
+html body #marketBetaNoteCtn { display: none !important; }
 
-/* Hide the Market Beta Warning */
-html body #market_notice,
-html body .market_notice,
-html body div:has(> a[href*="steamcommunity.com/groups/community_market"]) {
-    display: var(--market-warning-display, none) !important;
-}
-
-/* Market Page Global Background - Pitch Black with Accent Sun Shining Radial Gradient */
+/* Global Background - Pitch Black with Accent Sun Shining Radial Gradient (Community & Store) */
 html body.responsive_page,
+html body.v6,
+html body.store_page,
 html body .responsive_page_content,
 html body .responsive_page_template_content,
 html body .pagecontent,
+html body .page_background,
+html body .page_content_flex,
+html body #bg_store,
 html body #BG_bottom {
     background-color: #020408 !important;
     background-image: radial-gradient(ellipse 100% 120% at 50% 0%, rgba(37, 99, 235, 0.25) 0%, rgba(29, 78, 216, 0.10) 40%, rgba(2, 4, 8, 1) 100%) !important;
     background-attachment: fixed !important;
+}
+
+/* Ensure native Store backgrounds are transparent so our gradient shows through */
+html body.v6 .store_bg_overlay,
+html body.v6 .home_page_body_fallback,
+html body.v6 .carousel_container {
+    background-image: none !important;
+    background-color: transparent !important;
 }
 
 /* Market Listings - Separated Glassmorphic Cards */
