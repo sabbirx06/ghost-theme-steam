@@ -171,7 +171,7 @@ html body.DesktopUI div[class*="library_CollectionSection"],
 html body.DesktopUI div[class*="library_Container"],
 html body.DesktopUI div[class*="library_LibraryHome"] {
     background-color: #020408 !important;
-    background-image: radial-gradient(ellipse 120% 80% at 50% -20%, #0a1120 0%, #04070e 45%, #020408 90%) !important;
+    background-image: radial-gradient(ellipse 100% 120% at 50% 0%, rgba(37, 99, 235, 0.25) 0%, rgba(29, 78, 216, 0.10) 40%, rgba(2, 4, 8, 1) 100%) !important;
     background-attachment: fixed !important;
     border: none !important;
     box-shadow: none !important;
@@ -183,13 +183,14 @@ html body.DesktopUI div[class*="library_LibraryHome"] {
 
 html body.DesktopUI ._17uEBe5Ri8TMsnfELvs8-N,
 html body.DesktopUI ._2tC_c87MH67xQM7Y0pVyXm {
-    background-color: #05080e !important;
-    background-image: linear-gradient(145deg, rgba(37, 99, 235, 0.06), rgba(5, 8, 14, 0.98) 40%, #030509 100%) !important;
+    background: rgba(8, 14, 26, 0.7) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
     border-radius: 8px !important;
-    border: 1px solid transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.04) !important;
     margin: 10px 14px !important;
     padding: 14px 16px !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7) !important;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.06), 0 12px 40px rgba(0, 0, 0, 0.7) !important;
     position: relative !important;
 }
 
@@ -221,16 +222,12 @@ html body.DesktopUI ._2tC_c87MH67xQM7Y0pVyXm::before {
     pointer-events: none !important;
 }
 
-/* Inner shelf child elements — transparent */
-html body.DesktopUI ._1ZpBQtDqcKBbfIIv01Vs1R,
-html body.DesktopUI ._1ZpBQtDqcKBbfIIv01Vs1R > div,
-html body.DesktopUI ._1ZtpSq62fy_8W-_0pMn5cu,
+/* Inner shelf child elements — transparent (card wrappers excluded for FUT styling) */
 html body.DesktopUI ._23SnllqT_AqZ1C_QHcNQ4Z,
 html body.DesktopUI ._3fiHsLeD_6rtm6bM9lHlVL,
 html body.DesktopUI ._1RLnyCu6_DW-NTlpHTBhig,
 html body.DesktopUI ._3Sb2o_mQ30IDRh0C72QUUu,
 html body.DesktopUI ._3YO5BpDmZERh_G8kaWbaSJ,
-html body.DesktopUI ._3C_3Y2u1k1O4p0,
 html body.DesktopUI ._3yX7xQ6-Q6o6t-9aNn5K,
 html body.DesktopUI .V7RuDNUxhxoBRaiGWbk3B,
 html body.DesktopUI .DGRkX_HYUzbFaqRysWQVi,
@@ -283,7 +280,7 @@ html body.DesktopUI,
 html body.DesktopUI ._1ENHEsrSLcTRtPQFl1F-wL,
 html body.DesktopUI ._1rDh5rXSFZJOqCa4UpnI4z {
     background-color: #030509 !important;
-    background-image: radial-gradient(ellipse 110% 72% at 50% -16%, #122344 0%, #07101f 42%, #030509 78%) !important;
+    background-image: radial-gradient(ellipse 100% 120% at 50% 0%, rgba(37, 99, 235, 0.25) 0%, rgba(29, 78, 216, 0.10) 40%, rgba(2, 4, 8, 1) 100%) !important;
     background-attachment: fixed !important;
 }
 
@@ -459,71 +456,79 @@ html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU {
 }
 
 /* Force EVERY direct child in Row 1 to expand equally across 100% of full sidebar width */
+/* Unified Sidebar Interactive Elements: Icons, Dropdown, Search, Home */
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._3mzKdQXht__YHo6PX1LmB6,
+html body.DesktopUI .ghost-sidebar-shortcut,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._2PF_m-I5yte3WnQhpcz8RC,
+html body.DesktopUI div[class*="GameListDropdown"],
+html body.DesktopUI div[class*="gamelistdropdown_"],
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB input[type="text"].DialogInput,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB .Panel:has(> div > svg):has(> div > div) {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #f1f5f9 !important;
+    background: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 4px !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
+    transition: all 0.15s ease-out !important;
+}
+
+/* Ensure Search Bar wrapper doesn't double-border */
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB .DialogInput_Wrapper {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Icons specific layout overrides */
 html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *,
 html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._3mzKdQXht__YHo6PX1LmB6,
 html body.DesktopUI .ghost-sidebar-shortcut {
-    display: inline-flex !important;
     flex: 1 1 0px !important;
     width: 0 !important;
     min-width: 0 !important;
     max-width: 100% !important;
     height: 28px !important;
-    align-items: center !important;
-    justify-content: center !important;
     padding: 0 !important;
     margin: 0 !important;
-    color: #94a3b8 !important;
-    border: 1px solid rgba(59, 130, 246, 0.20) !important;
-    border-radius: 0px !important; /* Flat edges */
-    background: rgba(30, 64, 175, 0.10) !important;
-    font-size: 13px !important;
     cursor: pointer !important;
-    box-sizing: border-box !important;
-    transition: all 0.15s ease-out !important;
 }
 
-/* Fix icon coloring (make all icons white/light-gray to match) */
-html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > * svg,
-html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > * img,
-html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._3mzKdQXht__YHo6PX1LmB6 svg,
-html body.DesktopUI .ghost-sidebar-shortcut svg {
-    filter: grayscale(100%) brightness(200%) !important;
-    opacity: 0.8 !important;
-}
-
-html body.DesktopUI ._3mzKdQXht__YHo6PX1LmB6:hover,
-html body.DesktopUI .ghost-sidebar-shortcut:hover {
-    color: #67e8f9 !important;
-    border-color: rgba(34, 211, 238, 0.4) !important;
-    background: rgba(34, 211, 238, 0.15) !important;
-}
-
-/* Row 2: Games and Software Dropdown — Full Width on separate row below 6 icons */
+/* Dropdown specific layout overrides */
 html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._2PF_m-I5yte3WnQhpcz8RC,
 html body.DesktopUI div[class*="GameListDropdown"],
 html body.DesktopUI div[class*="gamelistdropdown_"] {
     order: 2 !important;
-    display: flex !important;
     width: 100% !important;
-    box-sizing: border-box !important;
     margin: 0 !important;
     height: 32px !important;
-    align-items: center !important;
-    background: rgba(17, 32, 55, 0.90) !important;
-    border: 1px solid rgba(59, 130, 246, 0.25) !important;
-    border-radius: 0px !important; /* Flat edges */
+    justify-content: space-between !important;
+}
+
+/* Hover States for all */
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *:hover,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._3mzKdQXht__YHo6PX1LmB6:hover,
+html body.DesktopUI .ghost-sidebar-shortcut:hover,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._2PF_m-I5yte3WnQhpcz8RC:hover,
+html body.DesktopUI div[class*="GameListDropdown"]:hover,
+html body.DesktopUI div[class*="gamelistdropdown_"]:hover,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB input[type="text"].DialogInput:hover,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB input[type="text"].DialogInput:focus,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB .Panel:has(> div > svg):has(> div > div):hover {
+    color: #67e8f9 !important;
+    border-color: rgba(34, 211, 238, 0.4) !important;
+    background: rgba(30, 41, 59, 0.8) !important;
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.15) !important;
 }
 
 /* ============================================================
-   4. FIFA ULTIMATE TEAM (FUT) GAME CARDS — POP OUT & GLOWING BLUE BORDER
+   TOP-RIGHT ACCOUNT MENU & WALLET BALANCE — BOLD VIBRANT BLUE
    ============================================================ */
-
-/* FUT Card Base Styling */
-html body.DesktopUI ._1ZtpSq62fy_8W-_0pMn5cu,
-html body.DesktopUI ._1ZpBQtDqcKBbfIIv01Vs1R img,
-html body.DesktopUI div[class*="library_AppCapsule"],
-html body.DesktopUI img[class*="library_AppCapsule"],
-/* TOP-RIGHT ACCOUNT MENU & WALLET BALANCE — BOLD VIBRANT BLUE */
 html body.DesktopUI [class*="titlebar_"] [class*="Account"],
 html body.DesktopUI [class*="titlebar_"] [class*="account"],
 html body.DesktopUI [class*="titlebar_"] [class*="CurrentUser"],
@@ -544,9 +549,7 @@ html body.DesktopUI div[class*="HomeHeader"],
 html body.DesktopUI div[class*="library_CollectionHeader"],
 html body.DesktopUI div[class*="library_HomeHeader"],
 html body.DesktopUI div[class*="library_ViewHeader"],
-html body.DesktopUI div[class*="library_Header"],
-html body.DesktopUI ._31mZ8e7v99p0p2G0G0G0G0,
-html body.DesktopUI ._2x24EerV69t4gXh23V0JjR {
+html body.DesktopUI div[class*="library_Header"] {
     background: #05080e !important;
     background-color: #05080e !important;
     background-image: linear-gradient(145deg, rgba(37, 99, 235, 0.08), rgba(5, 8, 14, 0.98) 40%, #030509 100%) !important;
@@ -591,71 +594,78 @@ html body.DesktopUI div[class*="ViewSelector"] button:hover {
    ============================================================ */
 
 /* Unclip containers so hover pop-out is never cut off by parent wrappers */
-._1RLnyCu6_DW-NTlpHTBhig,
-._3fiHsLeD_6rtm6bM9lHlVL,
-._17uEBe5Ri8TMsnfELvs8-N,
-._2tC_c87MH67xQM7Y0pVyXm,
-div[class*="library_AppGrid"],
-div[class*="library_Grid"],
-div[class*="CollectionSection"],
-div[class*="Shelf"],
-div[class*="shelf_"] {
+html body.DesktopUI ._1RLnyCu6_DW-NTlpHTBhig,
+html body.DesktopUI ._3fiHsLeD_6rtm6bM9lHlVL,
+html body.DesktopUI ._17uEBe5Ri8TMsnfELvs8-N,
+html body.DesktopUI ._2tC_c87MH67xQM7Y0pVyXm,
+html body.DesktopUI div[class*="library_AppGrid"],
+html body.DesktopUI div[class*="library_Grid"],
+html body.DesktopUI div[class*="CollectionSection"],
+html body.DesktopUI div[class*="Shelf"],
+html body.DesktopUI div[class*="shelf_"] {
     overflow: visible !important;
 }
 
 /* FUT Card Base Styling — Library Grid Capsules & Posters */
-._1ZpBQtDqcKBbfIIv01Vs1R,
-._1ZtpSq62fy_8W-_0pMn5cu,
-._3C_3Y2u1k1O4p0,
-a[href*="/app/"],
-div[class*="library_AppGrid"] > div {
+html body.DesktopUI ._1ZpBQtDqcKBbfIIv01Vs1R,
+html body.DesktopUI ._1ZtpSq62fy_8W-_0pMn5cu,
+html body.DesktopUI ._3C_3Y2u1k1O4p0,
+html body.DesktopUI a[href*="/app/"],
+html body.DesktopUI div.Panel:has(> div > img[src*="library_600x900"]),
+html body.DesktopUI div.Panel:has(> div > img[src*="header"]),
+html body.DesktopUI div.Panel:has(> div > img[src*="capsule"]),
+html body.DesktopUI div.Panel:has(> div > img[src*="apps"]),
+html body.DesktopUI div[class*="library_AppGrid"] > div,
+html body.DesktopUI div[class*="library_CollectionGrid"] > div,
+html body.DesktopUI div[class*="collectionview_CollectionCapsule_"] {
     border-radius: 4px !important;
     overflow: visible !important;
-    isolation: isolate !important;
-    border: none !important;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6) !important;
-    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease !important;
+    border: 2px solid transparent !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease !important;
     position: relative !important;
-    will-change: transform, box-shadow !important;
+    will-change: transform, border-color, box-shadow !important;
 }
 
 /* Inner poster image — matching border-radius */
-._1ZpBQtDqcKBbfIIv01Vs1R img,
-._1ZtpSq62fy_8W-_0pMn5cu img,
-._3C_3Y2u1k1O4p0 img,
-div[class*="library_AppGrid"] > div img {
-    border-radius: 4px !important;
-    overflow: hidden !important;
+html body.DesktopUI ._1ZpBQtDqcKBbfIIv01Vs1R img,
+html body.DesktopUI ._1ZtpSq62fy_8W-_0pMn5cu img,
+html body.DesktopUI ._3C_3Y2u1k1O4p0 img,
+html body.DesktopUI div.Panel:has(> div > img[src*="library_600x900"]) img,
+html body.DesktopUI div.Panel:has(> div > img[src*="header"]) img,
+html body.DesktopUI div.Panel:has(> div > img[src*="capsule"]) img,
+html body.DesktopUI div.Panel:has(> div > img[src*="apps"]) img,
+html body.DesktopUI div[class*="library_AppGrid"] > div img {
+    border-radius: 2px !important;
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
 }
 
-/* FUT Card Hover — Smooth Pop-Out Animation & Glowing Blue Border Wrap */
-._1ZpBQtDqcKBbfIIv01Vs1R:hover,
-._1ZtpSq62fy_8W-_0pMn5cu:hover,
-._3C_3Y2u1k1O4p0:hover,
-a[href*="/app/"]:hover,
-div[class*="library_AppGrid"] > div:hover {
-    transform: translateY(-8px) scale(1.04) !important;
-    z-index: 99999 !important;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85), 0 0 25px rgba(56, 189, 248, 0.4) !important;
+html body.DesktopUI div[class*="collectionview_CollectionCapsule_"] img {
+    border-radius: 2px !important;
 }
 
-/* Animated Beam Border on Hover */
-._1ZpBQtDqcKBbfIIv01Vs1R:hover::before,
-._1ZtpSq62fy_8W-_0pMn5cu:hover::before,
-._3C_3Y2u1k1O4p0:hover::before,
-a[href*="/app/"]:hover::before,
-div[class*="library_AppGrid"] > div:hover::before {
-    content: "" !important;
-    position: absolute !important;
-    inset: -2px !important;
-    border-radius: 6px !important;
-    background: conic-gradient(from var(--beam-angle), transparent 20%, rgba(34, 211, 238, 0.4) 50%, rgba(56, 189, 248, 1) 80%, rgba(37, 99, 235, 1) 100%) !important;
-    animation: ghostBorderBeam 2s linear infinite !important;
-    z-index: -1 !important;
-    pointer-events: none !important;
+/* Nuke Steam's native glare, shine, and hover effects (which use empty divs) */
+html body.DesktopUI div.Panel div:empty {
+    display: none !important;
+    background: none !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+/* FUT Card Hover — Pop-Out + Royal Blue Glowing Border */
+html body.DesktopUI div.Panel:has(> div > img[src*="library_600x900"]):hover,
+html body.DesktopUI div.Panel:has(> div > img[src*="header"]):hover,
+html body.DesktopUI div.Panel:has(> div > img[src*="capsule"]):hover,
+html body.DesktopUI div.Panel:has(> div > img[src*="apps"]):hover,
+html body.DesktopUI div[class*="collectionview_CollectionCapsule_"]:hover {
+    transform: translateY(-8px) scale(1.05) !important;
+    z-index: 99999 !important;
+    border-color: #2563eb !important;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8) !important;
 }
 
 /* ============================================================
@@ -871,10 +881,85 @@ html body.DesktopUI ._1UBpAXP408Ez_L_mXhW5Q9._2-O4ZG0KrnSrzISHBKctFQ {
 
 html body.DesktopUI button[class*="playbutton_PlayButton"],
 html body.DesktopUI div[class*="playbutton_PlayButton"] {
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    background: linear-gradient(90deg, #184c8f 0%, #12728f 100%) !important;
     border: none !important;
     color: #ffffff !important;
     font-weight: 800 !important;
     border-radius: 0px !important;
     box-shadow: 0 0 15px rgba(37, 99, 235, 0.45) !important;
 }
+
+/* ============================================================
+   10. PREMIUM GAME DETAILS OVERHAUL
+   ============================================================ */
+
+/* 1. Transparent Background Integration */
+html body.DesktopUI ._3FmxxjyWNHU1PrBGnBe6tm,
+html body.DesktopUI ._3lDczhulqraStjCitLYJ1K,
+html body.DesktopUI div:has(> img[src*="library_hero"]) {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* 2. Glassmorphic Content Panels (Activity, Friends, Achievements) */
+/* The actual grey box element inside the game details content area */
+html body.DesktopUI ._2r4TK4BAuU-J4FuF_O7v_5 {
+    background: rgba(8, 14, 26, 0.75) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-radius: 0px !important;
+    border: 1px solid rgba(255, 255, 255, 0.04) !important;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.06), 0 12px 40px rgba(0, 0, 0, 0.7) !important;
+    box-sizing: border-box !important; /* Prevent border from expanding width and breaking the column layout */
+    overflow: hidden !important; /* Ensure inner solid backgrounds don't clip outside the rounded corners */
+    padding: 16px !important; /* Give containers more breathing room */
+}
+/* Nuke native Steam inner backgrounds (like the shiny Community Content header which uses H2 tags) */
+html body.DesktopUI ._2r4TK4BAuU-J4FuF_O7v_5 > * {
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+/* 3. Navigation Bar (Links Bar) container */
+html body.DesktopUI .DgVQapkBmhAW6oPY5rPZo {
+    background: rgba(8, 14, 26, 0.4) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-top: 1px solid rgba(255,255,255, 0.05) !important; 
+    border-bottom: 1px solid rgba(255,255,255, 0.05) !important;
+}
+/* Ensure inner link wrappers are transparent */
+html body.DesktopUI ._7k4qmaN8SUMvv6u-L81uk,
+html body.DesktopUI .DY4_wSF8h9T5o46hO5I9V,
+html body.DesktopUI ._1b6LYWVijW-9E4YV0keDWZ {
+    background: transparent !important;
+}
+/* Hover effect for the links to match the theme */
+html body.DesktopUI .DY4_wSF8h9T5o46hO5I9V:hover,
+html body.DesktopUI ._7k4qmaN8SUMvv6u-L81uk:hover,
+html body.DesktopUI ._1b6LYWVijW-9E4YV0keDWZ:hover,
+html body.DesktopUI .DY4_wSF8h9T5o46hO5I9V.Focusable:focus {
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.35) 0%, rgba(59, 130, 246, 0.12) 100%) !important;
+    color: #ffffff !important;
+    border-radius: 0px !important;
+}
+
+/* 4. Action Bar (Install/Play Bar) */
+html body.DesktopUI div:has(> div > [class*="playbutton_PlayButton"]),
+html body.DesktopUI div:has(> div > div > [class*="playbutton_PlayButton"]) {
+    background: rgba(11, 20, 38, 0.6) !important; /* Slightly more transparent */
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+}
+/* Nuke inner solid backgrounds of the action bar safely */
+html body.DesktopUI div:has(> div > [class*="playbutton_PlayButton"]) > div[style*="background"],
+html body.DesktopUI div:has(> div > div > [class*="playbutton_PlayButton"]) > div[style*="background"] {
+    background: transparent !important;
+}
+
