@@ -157,16 +157,68 @@ div[class*="supernav_content"] a,
 .supernav_content a,
 .submenu_Store a,
 .submenu_Community a {
-    background: #000000 !important;
-    background-color: #000000 !important;
+    background: transparent !important;
 }
 
 div[class*="supernav_content"] a:hover,
 .supernav_content a:hover,
 .submenu_Store a:hover,
 .submenu_Community a:hover {
-    background: #000000 !important;
-    background-color: #000000 !important;
+    background: rgba(30, 64, 175, 0.4) !important; /* Royal Blue accent */
+    color: #67e8f9 !important; /* Cyan text */
+    text-decoration: none !important;
+}
+
+/* Image Banner Links (TOP SELLERS, ACTION, etc) */
+.supernav_content a[style*="background-image"] {
+    border-radius: 0px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.2s ease !important;
+}
+.supernav_content a[style*="background-image"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), 0 0 15px rgba(37, 99, 235, 0.3) !important;
+}
+
+/* White boxes inside Image Banners */
+.supernav_content a[style*="background-image"] > div,
+.supernav_content a[style*="background-image"] > span {
+    background: rgba(15, 23, 42, 0.7) !important; 
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    border-radius: 0px !important;
+    transition: all 0.2s ease !important;
+}
+.supernav_content a[style*="background-image"]:hover > div,
+.supernav_content a[style*="background-image"]:hover > span {
+    background: rgba(37, 99, 235, 0.9) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4) !important;
+}
+
+/* Block Buttons (GREAT ON DECK, DEMOS, DLC) */
+.supernav_content a:has(svg),
+.supernav_content a:has(img) {
+    background: rgba(15, 23, 42, 0.6) !important; 
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0px !important;
+    transition: all 0.2s ease !important;
+}
+.supernav_content a:has(svg):hover,
+.supernav_content a:has(img):hover {
+    background: rgba(30, 41, 59, 0.9) !important;
+    border: 1px solid rgba(37, 99, 235, 0.5) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), 0 0 15px rgba(37, 99, 235, 0.2) !important;
+}
+.supernav_content a[style*="background-image"] {
+    background: transparent !important; 
+    backdrop-filter: none !important;
+    border: none !important;
 }
 
 
@@ -389,18 +441,26 @@ html body div[data-featuretarget="store-menu-v7"] .Panel.Focusable *:has(> input
 
 /* Wishlist Button */
 html body [role="navigation"][aria-label="Store menu"] a[href*="wishlist"] {
-    background: rgba(15, 23, 42, 0.4) !important;
+    background: rgba(15, 23, 42, 0.6) !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 6px !important;
+    border-radius: 0px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
     margin-left: 12px !important;
+    margin-top: 2px !important; /* Fix vertical alignment with search bar */
+    height: 32px !important;
+    line-height: 30px !important;
+    padding: 0 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
     transition: background 0.2s ease !important;
 }
 
 html body [role="navigation"][aria-label="Store menu"] a[href*="wishlist"]:hover {
-    background: rgba(255, 255, 255, 0.15) !important;
+    background: rgba(37, 99, 235, 0.8) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.5) !important;
 }
 
 /* Store Search Overlay */
@@ -585,11 +645,11 @@ html.responsive body.responsive_page .market_tab_well_tab_active {
     to { --market-beam: 360deg; }
 }
 
-/* Green Action Buttons (Sell an Item, Buy Now) with Beam Border */
-html body a.btn_green_white_innerfade, 
-html.responsive body.responsive_page a.btn_green_white_innerfade,
-html body div.market_content_block a.btn_green_white_innerfade,
-html body div#market_buyorder_info a.btn_green_white_innerfade,
+/* ALL Action Buttons (Green, Blue, Grey) with Beam Border */
+html body .btn_green_white_innerfade,
+html body .btn_blue_white_innerfade,
+html body .btn_grey_white_innerfade,
+html body .btn_grey_black,
 html body a.item_market_action_button.item_market_action_button_green,
 html body a[href*="SellItemDialog"],
 html body a[href*="BuyItemDialog"] {
@@ -599,14 +659,32 @@ html body a[href*="BuyItemDialog"] {
     position: relative !important;
     border-radius: 4px !important;
     padding: 1px !important;
-    background: conic-gradient(from var(--market-beam), transparent 20%, rgba(16, 185, 129, 0.4) 50%, rgba(52, 211, 153, 1) 80%, rgba(255, 255, 255, 1) 100%) !important;
     animation: marketBeamAnim 2s linear infinite !important;
-    display: inline-block !important;
+    display: inline-flex !important;
     text-decoration: none !important;
+    box-sizing: border-box !important;
 }
 
-html body a.btn_green_white_innerfade *,
-html.responsive body.responsive_page a.btn_green_white_innerfade *,
+/* Green Buttons Beam */
+html body .btn_green_white_innerfade,
+html body a.item_market_action_button.item_market_action_button_green,
+html body a[href*="SellItemDialog"],
+html body a[href*="BuyItemDialog"] {
+    background: conic-gradient(from var(--market-beam), transparent 20%, rgba(16, 185, 129, 0.4) 50%, rgba(52, 211, 153, 1) 80%, rgba(255, 255, 255, 1) 100%) !important;
+}
+
+/* Blue & Grey Buttons Beam */
+html body .btn_blue_white_innerfade,
+html body .btn_grey_white_innerfade,
+html body .btn_grey_black {
+    background: conic-gradient(from var(--market-beam), transparent 20%, rgba(37, 99, 235, 0.4) 50%, rgba(59, 130, 246, 1) 80%, rgba(255, 255, 255, 1) 100%) !important;
+}
+
+/* Hide native styling on children */
+html body .btn_green_white_innerfade *,
+html body .btn_blue_white_innerfade *,
+html body .btn_grey_white_innerfade *,
+html body .btn_grey_black *,
 html body a.item_market_action_button.item_market_action_button_green *,
 html body a[href*="SellItemDialog"] *,
 html body a[href*="BuyItemDialog"] * {
@@ -615,39 +693,57 @@ html body a[href*="BuyItemDialog"] * {
     border: none !important;
 }
 
-html body a.btn_green_white_innerfade span,
-html.responsive body.responsive_page a.btn_green_white_innerfade span,
-html body div.market_content_block a.btn_green_white_innerfade span,
-html body div#market_buyorder_info a.btn_green_white_innerfade span,
+/* Inner Span Styling */
+html body .btn_green_white_innerfade span,
+html body .btn_blue_white_innerfade span,
+html body .btn_grey_white_innerfade span,
+html body .btn_grey_black span,
 html body a.item_market_action_button.item_market_action_button_green span.item_market_action_button_contents,
 html body a[href*="SellItemDialog"] span,
 html body a[href*="BuyItemDialog"] span {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    background: #064e3b !important; /* Dark emerald background */
     color: #ffffff !important;
     font-weight: bold !important;
     border-radius: 3px !important;
     padding: 0 16px !important;
     height: 100% !important;
-    min-height: 30px !important;
+    min-height: 28px !important;
     box-sizing: border-box !important;
     transition: background 0.2s ease !important;
+}
+
+/* Green Buttons Inner Background */
+html body .btn_green_white_innerfade span,
+html body a.item_market_action_button.item_market_action_button_green span.item_market_action_button_contents,
+html body a[href*="SellItemDialog"] span,
+html body a[href*="BuyItemDialog"] span {
+    background: #064e3b !important; /* Dark emerald background */
+}
+html body .btn_green_white_innerfade:hover span,
+html body a.item_market_action_button.item_market_action_button_green:hover span.item_market_action_button_contents,
+html body a[href*="SellItemDialog"]:hover span,
+html body a[href*="BuyItemDialog"]:hover span {
+    background: #047857 !important; /* Lighter emerald on hover */
+}
+
+/* Blue & Grey Buttons Inner Background */
+html body .btn_blue_white_innerfade span,
+html body .btn_grey_white_innerfade span,
+html body .btn_grey_black span {
+    background: #1e3a8a !important; /* Dark royal blue */
+}
+html body .btn_blue_white_innerfade:hover span,
+html body .btn_grey_white_innerfade:hover span,
+html body .btn_grey_black:hover span {
+    background: #1d4ed8 !important; /* Lighter royal blue on hover */
 }
 
 html body a.item_market_action_button.item_market_action_button_green span.item_market_action_button_edge {
     padding: 0 !important;
     display: block !important;
     height: 100% !important;
-}
-
-html body a.btn_green_white_innerfade:hover span,
-html.responsive body.responsive_page a.btn_green_white_innerfade:hover span,
-html body a.item_market_action_button.item_market_action_button_green:hover span.item_market_action_button_contents,
-html body a[href*="SellItemDialog"]:hover span,
-html body a[href*="BuyItemDialog"]:hover span {
-    background: #047857 !important; /* Lighter emerald on hover */
 }
 
 /* ====== COMMUNITY MARKET BODY & LISTINGS ====== */
@@ -682,18 +778,29 @@ html body.v6 .carousel_container {
     background-color: transparent !important;
 }
 
-/* Market Listings - Separated Glassmorphic Cards */
-html body .market_listing_row {
+/* Market Listings & Support Rows - Separated Glassmorphic Cards */
+html body .market_listing_row,
+html body a.help_node,
+html body div.help_node,
+html body .help_node_link,
+html body a[class*="help_"] {
     background: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
     backdrop-filter: blur(8px) !important;
     -webkit-backdrop-filter: blur(8px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.05) !important;
-    border-radius: 0 !important; /* NO ROUNDED CORNERS! */
-    margin-bottom: 8px !important;
+    border-radius: 0px !important;
+    color: #cbd5e1 !important;
     transition: all 0.2s ease !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+    margin-bottom: 8px !important; /* Space between rows */
 }
 
-html body .market_listing_row:hover {
+/* Hover State - Glow Effect */
+html body .market_listing_row:hover,
+html body a.help_node:hover,
+html body div.help_node:hover,
+html body .help_node_link:hover,
+html body a[class*="help_"]:hover {
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(34, 211, 238, 0.25)) !important;
     border-color: rgba(255, 255, 255, 0.15) !important;
 }

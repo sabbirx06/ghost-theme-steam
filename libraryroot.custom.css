@@ -244,26 +244,7 @@ html body.DesktopUI div[class*="library_Grid"] {
     box-shadow: none !important;
 }
 
-/*
-   Let collection shelves size to their poster rows.
 
-   Steam assigns a fixed grid row height to these containers by default.  On
-   Library Home that makes the final shelf end before the viewport, even when
-   more poster rows are available below it.  These are the layout overrides
-   used by the adjacent Steam/space theme; they preserve normal scrolling and
-   allow the All Games poster flow to continue behind the bottom status bar.
-*/
-html body.DesktopUI ._1RLnyCu6_DW-NTlpHTBhig,
-html body.DesktopUI .DGRkX_HYUzbFaqRysWQVi,
-html body.DesktopUI .DGRkX_HYUzbFaqRysWQVi:has(._3IWn-2rn7x98o5fDd0rAxb),
-html body.DesktopUI ._3fiHsLeD_6rtm6bM9lHlVL._3iXvgnyrIW0ldDNbrIhAyc {
-    height: unset !important;
-}
-
-html body.DesktopUI ._3vHkmRShhzwd67_MtEq8-n._3DJLGrqzoQ5vMDI_4VG502:has(._3IWn-2rn7x98o5fDd0rAxb),
-html body.DesktopUI .u1xD3KJEgksF_J_5TLZzO .Ma65KR7z4XhZl4vJvxf4D:has(._3IWn-2rn7x98o5fDd0rAxb) {
-    grid-auto-rows: unset !important;
-}
 
 /* Remove top and bottom empty spaces from Library right panel */
 html body.DesktopUI ._2AUVZlzQq67qe3yhLZsPPB,
@@ -315,10 +296,20 @@ html body.DesktopUI ._1ijTaXJJA5YWl_fW2IxcaT,
 html body.DesktopUI ._3vCzSrrXZzZjVJFZNg9SGu,
 html body.DesktopUI ._1_yS5UP7el0aN4vntx3dx,
 html body.DesktopUI div[class*="bottombar_"],
-html body.DesktopUI div[class*="footer_"],
-html body.DesktopUI div[class*="downloads_"] {
+html body.DesktopUI div[class*="footer_"] {
     background: transparent !important;
     border: none !important;
+}
+
+/* Downloads Page & Settings Background */
+html body.DesktopUI div[class*="downloads_"],
+html body.DesktopUI div[class*="downloadmanager_"],
+html body.DesktopUI div[class*="pagedsettings_PagedSettingsDialog_"],
+html body.DesktopUI div[class*="steamdesktop_ContentFrame_"],
+html body.DesktopUI .DownloadsPage {
+    background-color: #020408 !important;
+    background-image: radial-gradient(ellipse 100% 120% at 50% 0%, rgba(37, 99, 235, 0.25) 0%, rgba(29, 78, 216, 0.10) 40%, rgba(2, 4, 8, 1) 100%) !important;
+    background-attachment: fixed !important;
 }
 
 html body.DesktopUI .ghost-bottom-bar-empty {
@@ -483,12 +474,21 @@ html body.DesktopUI .ghost-sidebar-shortcut {
     margin: 0 !important;
     color: #94a3b8 !important;
     border: 1px solid rgba(59, 130, 246, 0.20) !important;
-    border-radius: 4px !important;
+    border-radius: 0px !important; /* Flat edges */
     background: rgba(30, 64, 175, 0.10) !important;
     font-size: 13px !important;
     cursor: pointer !important;
     box-sizing: border-box !important;
     transition: all 0.15s ease-out !important;
+}
+
+/* Fix icon coloring (make all icons white/light-gray to match) */
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > * svg,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > * img,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._3mzKdQXht__YHo6PX1LmB6 svg,
+html body.DesktopUI .ghost-sidebar-shortcut svg {
+    filter: grayscale(100%) brightness(200%) !important;
+    opacity: 0.8 !important;
 }
 
 html body.DesktopUI ._3mzKdQXht__YHo6PX1LmB6:hover,
@@ -511,7 +511,7 @@ html body.DesktopUI div[class*="gamelistdropdown_"] {
     align-items: center !important;
     background: rgba(17, 32, 55, 0.90) !important;
     border: 1px solid rgba(59, 130, 246, 0.25) !important;
-    border-radius: 4px !important;
+    border-radius: 0px !important; /* Flat edges */
 }
 
 /* ============================================================
@@ -596,7 +596,6 @@ html body.DesktopUI div[class*="ViewSelector"] button:hover {
 ._17uEBe5Ri8TMsnfELvs8-N,
 ._2tC_c87MH67xQM7Y0pVyXm,
 div[class*="library_AppGrid"],
-div[class*="library_CollectionGrid"],
 div[class*="library_Grid"],
 div[class*="CollectionSection"],
 div[class*="Shelf"],
@@ -609,8 +608,7 @@ div[class*="shelf_"] {
 ._1ZtpSq62fy_8W-_0pMn5cu,
 ._3C_3Y2u1k1O4p0,
 a[href*="/app/"],
-div[class*="library_AppGrid"] > div,
-div[class*="library_CollectionGrid"] > div {
+div[class*="library_AppGrid"] > div {
     border-radius: 4px !important;
     overflow: visible !important;
     isolation: isolate !important;
@@ -625,8 +623,7 @@ div[class*="library_CollectionGrid"] > div {
 ._1ZpBQtDqcKBbfIIv01Vs1R img,
 ._1ZtpSq62fy_8W-_0pMn5cu img,
 ._3C_3Y2u1k1O4p0 img,
-div[class*="library_AppGrid"] > div img,
-div[class*="library_CollectionGrid"] > div img {
+div[class*="library_AppGrid"] > div img {
     border-radius: 4px !important;
     overflow: hidden !important;
     width: 100% !important;
@@ -639,9 +636,8 @@ div[class*="library_CollectionGrid"] > div img {
 ._1ZtpSq62fy_8W-_0pMn5cu:hover,
 ._3C_3Y2u1k1O4p0:hover,
 a[href*="/app/"]:hover,
-div[class*="library_AppGrid"] > div:hover,
-div[class*="library_CollectionGrid"] > div:hover {
-    transform: translateY(-8px) scale(1.05) !important;
+div[class*="library_AppGrid"] > div:hover {
+    transform: translateY(-8px) scale(1.04) !important;
     z-index: 99999 !important;
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85), 0 0 25px rgba(56, 189, 248, 0.4) !important;
 }
@@ -651,8 +647,7 @@ div[class*="library_CollectionGrid"] > div:hover {
 ._1ZtpSq62fy_8W-_0pMn5cu:hover::before,
 ._3C_3Y2u1k1O4p0:hover::before,
 a[href*="/app/"]:hover::before,
-div[class*="library_AppGrid"] > div:hover::before,
-div[class*="library_CollectionGrid"] > div:hover::before {
+div[class*="library_AppGrid"] > div:hover::before {
     content: "" !important;
     position: absolute !important;
     inset: -2px !important;

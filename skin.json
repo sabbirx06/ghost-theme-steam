@@ -33,6 +33,10 @@
 			"TargetCss": "webkit.css"
 		},
 		{
+			"MatchRegexString": ".*",
+			"TargetCss": "friends.custom.css"
+		},
+		{
 			"MatchRegexString": "^Steam$",
 			"TargetCss": "libraryroot.custom.css",
 			"TargetJs": "webkit.js"
