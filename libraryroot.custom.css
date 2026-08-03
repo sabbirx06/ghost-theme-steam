@@ -38,6 +38,99 @@ html body.DesktopUI div[class*="scrolltop"] {
     margin: 0 !important;
 }
 
+/* Place Back Arrow (`←`) on Far-Left of STORE */
+html body div[class*="titlebar_Navigation"] div[class*="LocationNavigation"] > *:first-child,
+html body div[class*="titlebar_Navigation"] button:first-of-type,
+html body ._3Z3ohQ8-1NKnCZkbS6fvy svg:first-of-type,
+/* Ensure header navigation links and text spans are 100% visible */
+html body ._7AlhCx3XGzBeIrQaCneUD,
+html body a[class*="supernav_"],
+html body div[class*="titlebar_Navigation"] a,
+html body div[class*="titlebar_Navigation"] div,
+html body div[class*="supernav_"] a,
+html body ._19axKcqYRuaJ8vdYKYmtTQ {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+    padding: 6px 12px !important;
+    color: #c1c5c9 !important;
+    text-decoration: none !important;
+    border: none !important;
+    border-bottom: 0px solid transparent !important;
+    border-bottom-color: transparent !important;
+    border-bottom-width: 0px !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background-image: none !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    transition: color 0.15s ease-out, text-shadow 0.15s ease-out !important;
+}
+
+/* Active Tab — Cyan-Blue Text Highlight ONLY (NO UNDERLINE LINE) */
+html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ,
+html body a[class*="supernav_"][class*="active"],
+html body a[class*="supernav_"].active,
+html body ._1gqEjB5QsKT_NftD1dEsdZ,
+html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ ._19axKcqYRuaJ8vdYKYmtTQ,
+html body div[class*="titlebar_Navigation"] a._1gqEjB5QsKT_NftD1dEsdZ,
+html body div[class*="titlebar_Navigation"] a[class*="active"],
+html body div[class*="supernav_"] a[class*="active"] {
+    color: #38bdf8 !important;
+    border: none !important;
+    border-bottom: 0px solid transparent !important;
+    border-bottom-color: transparent !important;
+    border-bottom-width: 0px !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background-image: none !important;
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.4) !important;
+}
+
+/* OBLITERATE ONLY THE PSEUDO-ELEMENT UNDERLINE BAR LINE */
+._19axKcqYRuaJ8vdYKYmtTQ::after,
+._19axKcqYRuaJ8vdYKYmtTQ::before,
+html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ ._19axKcqYRuaJ8vdYKYmtTQ::after,
+html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ ._19axKcqYRuaJ8vdYKYmtTQ::before,
+html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ::after,
+html body ._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ::before,
+html body ._7AlhCx3XGzBeIrQaCneUD::after,
+html body ._7AlhCx3XGzBeIrQaCneUD::before,
+html body a[class*="supernav_"]::after,
+html body a[class*="supernav_"]::before,
+html body div[class*="titlebar_Navigation"] *::after,
+html body div[class*="titlebar_Navigation"] *::before {
+    display: none !important;
+    content: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
+/* Place Forward Arrow (`→`) on Far-Right of GHOST */
+html body div[class*="titlebar_Navigation"] div[class*="LocationNavigation"] > *:last-child,
+html body div[class*="titlebar_Navigation"] button:last-of-type,
+html body ._3Z3ohQ8-1NKnCZkbS6fvy svg:last-of-type,
+html body ._3Z3ohQ8-1NKnCZkbS6fvy div[class*="Navigation"]:last-child {
+    position: absolute !important;
+    right: -36px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    transform-origin: center center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
 /* ============================================================
    1. UNIFIED PAGE CANVAS (#0a0e1a) — MATCHES LEFT SIDEBAR
    ============================================================ */
