@@ -404,27 +404,27 @@ html body [role="navigation"][aria-label="Store menu"] a[href*="wishlist"]:hover
 }
 
 /* Store Search Overlay */
-._1l2dE9F6uH-Q7-h82Xj-95,
-._3x4D5qU6eE8-vF8bI7t5l_,
-[class*="search_SearchOverlay_"] {
+html body div[role="navigation"][aria-label="Store menu"] + div {
     background: rgba(15, 23, 42, 0.6) !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 6px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+    padding: 8px !important;
 }
 
 /* Make search item backgrounds transparent so the glass shows through */
-._1l2dE9F6uH-Q7-h82Xj-95 > div,
-._1l2dE9F6uH-Q7-h82Xj-95 a,
-._1l2dE9F6uH-Q7-h82Xj-95 ._1u2HkRz_FnAfR5OjfjexgF {
-    background-color: transparent !important;
+html body div[role="navigation"][aria-label="Store menu"] + div > div,
+html body div[role="navigation"][aria-label="Store menu"] + div > div > div,
+html body div[role="navigation"][aria-label="Store menu"] + div a,
+html body div[role="navigation"][aria-label="Store menu"] + div button {
+    background: transparent !important;
 }
 
 /* Hover state for search results */
-._1l2dE9F6uH-Q7-h82Xj-95 a:hover,
-._1l2dE9F6uH-Q7-h82Xj-95 > div > div:hover {
+html body div[role="navigation"][aria-label="Store menu"] + div a:hover,
+html body div[role="navigation"][aria-label="Store menu"] + div button:hover {
     background: rgba(255, 255, 255, 0.15) !important;
 }
 
@@ -463,4 +463,114 @@ body.ContextMenuPopupBody .contextMenuItem:hover,
 body.ContextMenuPopupBody [role="menuitem"]:hover {
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.5), rgba(34, 211, 238, 0.5)) !important;
     color: #ffffff !important;
+}
+
+/* Market Header Pitch Black */
+html body .market_header_bg {
+    background: #05070a !important;
+    background-color: #05070a !important;
+}
+
+/* Glassmorphic Wallet Balance Box */
+html body .market_header_bg .user_info {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0 !important; /* Sharp 90 degree edges */
+    padding: 8px 16px !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Browse by Game Side Buttons - Glassmorphic */
+html body a.game_button,
+html.responsive body.responsive_page a.game_button {
+    background: rgba(15, 23, 42, 0.6) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-radius: 0 !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    margin: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease !important;
+}
+
+html body a.game_button:hover,
+html body a.game_button:hover *,
+html.responsive body.responsive_page a.game_button:hover,
+html.responsive body.responsive_page a.game_button:hover * {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+html body a.game_button:hover,
+html.responsive body.responsive_page a.game_button:hover {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.5), rgba(34, 211, 238, 0.5)) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+html body a.game_button span.game_button_contents,
+html body a.game_button span {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    margin: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+
+/* Strip native green image and color from header logo */
+html body .market_header_bg *,
+html body .market_header_bg .market_header_logo {
+    background-image: none !important;
+    background-color: transparent !important;
+}
+
+/* Bold the Market Header Text */
+html body .market_header_bg .market_title_text,
+html body .market_header_bg span,
+html body .market_header_bg h1 {
+    font-weight: bold !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+}
+
+/* Market Tab Inactive/Hover Background */
+html body .market_tab_well_tab:hover,
+html body .market_tab_well_tab:hover * {
+    background-image: none !important;
+    background-color: transparent !important;
+}
+
+html body .market_tab_well_tab:hover {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(34, 211, 238, 0.2)) !important;
+}
+
+/* Market Active Tab Background */
+html body .market_tab_well_tab_active,
+html body .market_tab_well_tab_active * {
+    background-image: none !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+html body .market_tab_well_tab_active {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.5), rgba(34, 211, 238, 0.5)) !important;
+    border-radius: 0 !important;
+}
+
+/* Green Action Buttons (Sell an Item) to Accent Color */
+html body .btn_green_white_innerfade, 
+html body .btn_green_white_innerfade * {
+    background-image: none !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+html body .btn_green_white_innerfade {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.5), rgba(34, 211, 238, 0.5)) !important;
+    border-radius: 0 !important;
 }
