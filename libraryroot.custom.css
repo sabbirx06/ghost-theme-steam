@@ -178,19 +178,20 @@ html body.DesktopUI div[class*="library_LibraryHome"] {
 }
 
 /* ============================================================
-   2. ELEVATED FROSTED GLASS SHELF CARDS
+   2. ELEVATED SPOTLIGHT GLASS SHELF CARDS
    ============================================================ */
 
 html body.DesktopUI ._17uEBe5Ri8TMsnfELvs8-N,
 html body.DesktopUI ._2tC_c87MH67xQM7Y0pVyXm {
-    background: rgba(255, 255, 255, 0.04) !important; /* Neutral smoky glass to contrast against pitch black */
-    backdrop-filter: blur(25px) !important;
-    -webkit-backdrop-filter: blur(25px) !important;
+    background: radial-gradient(100% 150% at 50% 0%, rgba(56, 189, 248, 0.04) 0%, rgba(8, 14, 26, 0.3) 50%, rgba(2, 4, 8, 0.5) 100%) !important;
+    backdrop-filter: blur(30px) !important;
+    -webkit-backdrop-filter: blur(30px) !important;
     border-radius: 12px !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important; /* Brighter base border for clear visual separation */
+    border-top: 1px solid rgba(255, 255, 255, 0.18) !important; /* Light reflecting off the top edge */
     margin: 10px 14px !important;
     padding: 14px 16px !important;
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 12px 40px rgba(0, 0, 0, 0.8) !important;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 12px 40px rgba(0, 0, 0, 0.6) !important;
     position: relative !important;
 }
 
@@ -242,8 +243,7 @@ html body.DesktopUI div[class*="library_Grid"] {
 }
 
 
-
-/* Remove top and bottom empty spaces from Library right panel */
+/* Restore library height calculations for React Virtualized */
 html body.DesktopUI ._2AUVZlzQq67qe3yhLZsPPB,
 html body.DesktopUI div[class*="library_Container"],
 html body.DesktopUI div[class*="library_LibraryHome"] {
@@ -255,6 +255,18 @@ html body.DesktopUI div[class*="library_LibraryHome"] {
     margin-top: 0 !important;
     position: static !important;
     bottom: auto !important;
+}
+/* Bold the shelf titles (e.g. Recent Games, Zettlekasten) */
+html body.DesktopUI .V7RuDNUxhxoBRaiGWbk3B,
+html body.DesktopUI .V7RuDNUxhxoBRaiGWbk3B *,
+html body.DesktopUI div[class*="shelf_"] h1,
+html body.DesktopUI div[class*="shelf_"] h2,
+html body.DesktopUI div[class*="shelf_"] h3,
+html body.DesktopUI div[class*="Shelf"] h1,
+html body.DesktopUI div[class*="Shelf"] h2,
+html body.DesktopUI div[class*="Shelf"] h3 {
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
 }
 
 html body.DesktopUI ._2sNr7PFYcJZWNkEMCDVVPR,
@@ -459,28 +471,82 @@ html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU {
 /* Unified Sidebar Interactive Elements: Icons, Dropdown, Search, Home */
 html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *,
 html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._3mzKdQXht__YHo6PX1LmB6,
-html body.DesktopUI .ghost-sidebar-shortcut,
-html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._2PF_m-I5yte3WnQhpcz8RC,
 html body.DesktopUI div[class*="GameListDropdown"],
 html body.DesktopUI div[class*="gamelistdropdown_"],
-html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB input[type="text"].DialogInput,
-html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB .Panel:has(> div > svg):has(> div > div) {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: #f1f5f9 !important;
-    background: rgba(15, 23, 42, 0.6) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 4px !important;
+html body.DesktopUI input[type="text"],
+html body.DesktopUI input[type="search"],
+html body.DesktopUI ._2DhwP8qj-wV7wE2kF1_C3b,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB,
+html body.DesktopUI ._24c3nUuF42D5e-L1P6C7r2,
+html body.DesktopUI div[class*="GameListHomeAndSearch"] > div {
+    background: rgba(8, 14, 26, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 0px !important;
     backdrop-filter: blur(8px) !important;
     -webkit-backdrop-filter: blur(8px) !important;
-    font-size: 13px !important;
-    box-sizing: border-box !important;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+    color: #e2e8f0 !important;
     transition: all 0.15s ease-out !important;
+}
+
+/* ------------------------------------------------------------
+   Custom Theming for Dialog Dropdown Menus (e.g., Sorting)
+   ------------------------------------------------------------ */
+html body.DesktopUI .DialogMenuPosition ._DialogInputContainer,
+html body.DesktopUI .ContextMenuPopup {
+    background: #080e1a !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid #38bdf8 !important;
+    border-radius: 0px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9) !important;
+    color: #e2e8f0 !important;
+    padding: 4px !important;
+}
+
+/* Dropdown Menu Items */
+html body.DesktopUI .DialogMenuPosition ._DialogInputContainer > button,
+html body.DesktopUI .ContextMenuPopup div {
+    background: transparent !important;
+    color: #cbd5e1 !important;
+    padding: 8px 12px !important;
+    border-radius: 0px !important;
+    transition: background 0.15s ease, color 0.15s ease !important;
+    cursor: pointer !important;
+}
+
+/* Dropdown Menu Item Hover / Selected */
+html body.DesktopUI .DialogMenuPosition ._DialogInputContainer > button:hover,
+html body.DesktopUI .DialogMenuPosition ._DialogInputContainer > button:focus,
+html body.DesktopUI .DialogMenuPosition ._DialogInputContainer > button[aria-selected="true"],
+html body.DesktopUI .DialogMenuPosition ._DialogInputContainer > button.ContextMenuAutoFocus,
+html body.DesktopUI .ContextMenuPopup div:hover,
+html body.DesktopUI .ContextMenuPopup div:focus {
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.6), rgba(56, 189, 248, 0.4)) !important;
+    color: #ffffff !important;
 }
 
 /* Ensure Search Bar wrapper doesn't double-border */
 html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB .DialogInput_Wrapper {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0px !important;
+}
+
+/* Add Magnifying Glass Icon to Sidebar Search Bar */
+html body.DesktopUI div[class*="GameListHomeAndSearch"] input[type="text"],
+html body.DesktopUI div[class*="GameListHomeAndSearch"] input[type="search"],
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB input {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='rgba(148, 163, 184, 0.8)'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: 8px center !important;
+    background-size: 14px !important;
+    padding-left: 32px !important;
+}
+
+/* Ensure GameListHomeAndSearch background doesn't interfere */
+html body.DesktopUI div[class*="GameListHomeAndSearch"] {
     background: transparent !important;
     border: none !important;
 }
@@ -598,18 +664,13 @@ html body.DesktopUI ._1RLnyCu6_DW-NTlpHTBhig,
 html body.DesktopUI ._3fiHsLeD_6rtm6bM9lHlVL,
 html body.DesktopUI ._17uEBe5Ri8TMsnfELvs8-N,
 html body.DesktopUI ._2tC_c87MH67xQM7Y0pVyXm,
-html body.DesktopUI div[class*="library_AppGrid"],
-html body.DesktopUI div[class*="library_Grid"],
-html body.DesktopUI div[class*="CollectionSection"],
+/* Allow shelves to overflow to avoid clipping hover effects, but keep grid hidden to not break React Virtualized */
 html body.DesktopUI div[class*="Shelf"],
 html body.DesktopUI div[class*="shelf_"] {
     overflow: visible !important;
 }
 
 /* FUT Card Base Styling — Library Grid Capsules & Posters */
-html body.DesktopUI ._1ZpBQtDqcKBbfIIv01Vs1R,
-html body.DesktopUI ._1ZtpSq62fy_8W-_0pMn5cu,
-html body.DesktopUI ._3C_3Y2u1k1O4p0,
 html body.DesktopUI a[href*="/app/"],
 html body.DesktopUI div.Panel:has(> div > img[src*="library_600x900"]),
 html body.DesktopUI div.Panel:has(> div > img[src*="header"]),
@@ -630,9 +691,6 @@ html body.DesktopUI div[class*="collectionview_CollectionCapsule_"] {
 }
 
 /* Inner poster image — matching border-radius */
-html body.DesktopUI ._1ZpBQtDqcKBbfIIv01Vs1R img,
-html body.DesktopUI ._1ZtpSq62fy_8W-_0pMn5cu img,
-html body.DesktopUI ._3C_3Y2u1k1O4p0 img,
 html body.DesktopUI div.Panel:has(> div > img[src*="library_600x900"]) img,
 html body.DesktopUI div.Panel:has(> div > img[src*="header"]) img,
 html body.DesktopUI div.Panel:has(> div > img[src*="capsule"]) img,
@@ -650,7 +708,6 @@ html body.DesktopUI div[class*="collectionview_CollectionCapsule_"] img {
 
 /* Nuke Steam's native glare, shine, and hover effects (which use empty divs) */
 html body.DesktopUI div.Panel div:empty {
-    display: none !important;
     background: none !important;
     background-image: none !important;
     box-shadow: none !important;
