@@ -1020,3 +1020,149 @@ html body.DesktopUI div:has(> div > div > [class*="playbutton_PlayButton"]) > di
     background: transparent !important;
 }
 
+/* ============================================================
+   11. MODALS & DIALOGS OVERHAUL (e.g. New Collection)
+   ============================================================ */
+
+/* Main Modal Background & Glassmorphism */
+html body.DesktopUI .ModalPosition_Content,
+html body.DesktopUI .DialogContent,
+html body.DesktopUI .GenericDialogBase {
+    background: rgba(8, 14, 26, 0.85) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border-radius: 0px !important;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.9) !important;
+    border: 1px solid rgba(56, 189, 248, 0.25) !important;
+}
+
+/* Nuke native Steam solid grey backgrounds on modal containers */
+html body.DesktopUI .ModalPosition_Content > div:not(.ModalPosition_Dismiss),
+html body.DesktopUI .DialogContent > div {
+    background: transparent !important;
+}
+
+/* Modal Headers */
+html body.DesktopUI .DialogHeader {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+/* Modal Input Fields */
+html body.DesktopUI .DialogInput_Wrapper,
+html body.DesktopUI .DialogInput {
+    background: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid rgba(56, 189, 248, 0.2) !important;
+    border-radius: 0px !important;
+    color: #e2e8f0 !important;
+    box-shadow: none !important;
+}
+html body.DesktopUI .DialogInput:focus {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2) !important;
+    background: rgba(8, 14, 26, 0.9) !important;
+}
+
+/* Modal Buttons (Create Collection, Save, Cancel, etc) */
+html body.DesktopUI .DialogButton,
+html body.DesktopUI .DialogButton.Secondary {
+    background: rgba(30, 41, 59, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0px !important;
+    color: #f1f5f9 !important;
+    transition: all 0.2s ease !important;
+    box-shadow: none !important;
+}
+
+/* Modal Button Hover & Focus States */
+html body.DesktopUI .DialogButton:hover,
+html body.DesktopUI .DialogButton:focus,
+html body.DesktopUI .DialogButton.Secondary:hover {
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.6), rgba(56, 189, 248, 0.4)) !important;
+    border-color: #38bdf8 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2) !important;
+}
+
+/* Special Button text color fix */
+html body.DesktopUI .DialogButton span,
+html body.DesktopUI .DialogButton.Secondary span {
+    color: inherit !important;
+}
+
+/* Fix SVG icon colors in buttons */
+html body.DesktopUI .DialogButton svg,
+html body.DesktopUI .DialogButton.Secondary svg {
+    fill: currentColor !important;
+}
+
+/* The dark background panel for the descriptive buttons */
+html body.DesktopUI .DialogFooter div[class*="Panel"] {
+    background: rgba(2, 6, 15, 0.6) !important;
+    border-radius: 0px !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding: 16px !important;
+}
+
+/* The text description under the buttons (like "A collection is a simple way...") */
+html body.DesktopUI .DialogFooter div[class*="Panel"] > div > div:not(.DialogButton) {
+    background: transparent !important;
+    color: #94a3b8 !important;
+}
+
+/* ============================================================
+   12. LIBRARY HOME & COLLECTION BUTTONS
+   ============================================================ */
+
+/* The Home & Collection Buttons */
+html body.DesktopUI a[href*="/library/home"],
+html body.DesktopUI a[href*="/library/collections"] {
+    background: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid rgba(56, 189, 248, 0.2) !important;
+    border-radius: 0px !important;
+    color: #cbd5e1 !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Ensure inner wrappers don't block the background */
+html body.DesktopUI a[href*="/library/home"] > div,
+html body.DesktopUI a[href*="/library/collections"] > div {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* The 4-square grid icon made of divs for the Collection button */
+html body.DesktopUI a[href*="/library/collections"] > div > div {
+    background-color: currentColor !important;
+    border-radius: 0px !important; /* Sharp corners for the 4 squares too */
+}
+
+/* Hover glow for Home & Collection buttons */
+html body.DesktopUI a[href*="/library/home"]:hover,
+html body.DesktopUI a[href*="/library/collections"]:hover,
+html body.DesktopUI a[href*="/library/home"]:focus,
+html body.DesktopUI a[href*="/library/collections"]:focus,
+html body.DesktopUI a[href*="/library/home"][aria-current="page"],
+html body.DesktopUI a[href*="/library/collections"][aria-current="page"] {
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.6), rgba(56, 189, 248, 0.4)) !important;
+    border-color: #38bdf8 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2) !important;
+}
+
+/* The giant Steam logo watermark inside the Home button */
+html body.DesktopUI a[href*="/library/home"] svg {
+    fill: rgba(255, 255, 255, 0.05) !important; /* Dim the watermark */
+}
+
+/* Fix URL bar text overflow in desktop UI */
+html body.DesktopUI div:has(> div[dir="ltr"]) {
+    min-width: 0 !important;
+}
+html body.DesktopUI div:has(> svg) + div[dir="ltr"],
+html body.DesktopUI div[dir="ltr"] {
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    min-width: 0 !important;
+}

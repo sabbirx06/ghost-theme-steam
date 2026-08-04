@@ -831,3 +831,128 @@ html body .market_listing_table_header {
     border: none !important;
     color: rgba(255, 255, 255, 0.7) !important;
 }
+
+/* ============================================================
+   14. WISHLIST PAGE OVERHAUL
+   ============================================================ */
+
+/* Main Wishlist Background */
+html body #wishlist_page,
+html body .wishlist_page,
+html body .page_content:has(.wishlist_row) {
+    background: #05070a !important;
+}
+
+/* Wishlist Rows */
+html body .wishlist_row {
+    background: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 0px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    transition: all 0.2s ease !important;
+    margin-bottom: 12px !important;
+}
+
+/* Wishlist Row Hover State */
+html body .wishlist_row:hover {
+    background: rgba(15, 23, 42, 0.9) !important;
+    border: 1px solid rgba(56, 189, 248, 0.5) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), 0 0 15px rgba(56, 189, 248, 0.2) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Steam's Default Header/Title */
+html body h2.wishlist_header,
+html body .wishlist_header h2 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* The Search Input at the top of the wishlist */
+html body #wishlist_search {
+    background: rgba(8, 14, 26, 0.8) !important;
+    border: 1px solid rgba(56, 189, 248, 0.2) !important;
+    border-radius: 0px !important;
+    color: #e2e8f0 !important;
+    box-shadow: none !important;
+}
+html body #wishlist_search:focus {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3) !important;
+}
+
+/* Options / Sort Dropdowns */
+html body .wishlist_header .btnv6_blue_hoverfade,
+html body .wishlist_header .btn_medium {
+    background: rgba(30, 41, 59, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0px !important;
+    color: #f1f5f9 !important;
+}
+html body .wishlist_header .btnv6_blue_hoverfade:hover,
+html body .wishlist_header .btn_medium:hover {
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.6), rgba(56, 189, 248, 0.4)) !important;
+    border-color: #38bdf8 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2) !important;
+}
+
+/* Green "Add to Cart" Button override */
+html body .wishlist_row .btnv6_green_white_innerfade,
+html body .wishlist_row .btn_addtocart,
+html body .wishlist_row .add_to_cart,
+html body .wishlist_row a[href*="add_to_cart"] {
+    background: rgba(30, 41, 59, 0.8) !important;
+    border: 1px solid rgba(56, 189, 248, 0.4) !important;
+    border-radius: 0px !important;
+    color: #f1f5f9 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease !important;
+}
+html body .wishlist_row .btnv6_green_white_innerfade > span,
+html body .wishlist_row .btn_addtocart > span,
+html body .wishlist_row .add_to_cart > span {
+    background: transparent !important;
+    color: #f1f5f9 !important;
+    text-shadow: none !important;
+}
+
+/* Hover on Add to Cart */
+html body .wishlist_row .btnv6_green_white_innerfade:hover,
+html body .wishlist_row .btn_addtocart:hover,
+html body .wishlist_row .add_to_cart:hover,
+html body .wishlist_row a[href*="add_to_cart"]:hover {
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.8), rgba(56, 189, 248, 0.6)) !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4) !important;
+}
+
+/* Game Title */
+html body .wishlist_row .title {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+/* Tags & Categories */
+html body .wishlist_row .tag,
+html body .wishlist_row .wishlist_category {
+    background: rgba(8, 14, 26, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0px !important;
+    color: #94a3b8 !important;
+}
+html body .wishlist_row .tag:hover {
+    background: rgba(56, 189, 248, 0.2) !important;
+    border-color: #38bdf8 !important;
+    color: #ffffff !important;
+}
+
+/* Remove button */
+html body .wishlist_row .delete {
+    color: #ef4444 !important;
+}

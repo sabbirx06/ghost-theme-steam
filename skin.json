@@ -40,6 +40,10 @@
 			"MatchRegexString": "^Steam$",
 			"TargetCss": "libraryroot.custom.css",
 			"TargetJs": "webkit.js"
+		},
+		{
+			"MatchRegexString": ".*(steampowered\\.com|steamcommunity\\.com).*",
+			"TargetCss": "store.custom.css"
 		}
 	]
 }

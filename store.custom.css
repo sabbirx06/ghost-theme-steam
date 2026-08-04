@@ -1,0 +1,231 @@
+/* ==========================================================================
+   👻 GHOST STEAM THEME - STORE WEBKIT (store.custom.css)
+   ========================================================================== */
+
+/* 
+ * 1. WISHLIST OVERHAUL (Legacy and React)
+ * We target #StoreTemplate which is the root for Steam's new React pages.
+ */
+
+body {
+    background-color: #05070a !important;
+    background-image: none !important;
+}
+
+#StoreTemplate {
+    background-color: #05070a !important;
+}
+
+/* Hide responsive hamburger menu */
+#StoreTemplate header:has(button) {
+    display: none !important;
+}
+
+/* Store Navigation Bar (Browse, Recommendations, etc) */
+#StoreTemplate .Panel:has(form[role="search"]) {
+    background-color: #020408 !important;
+}
+
+
+/* Wishlist Filter/Search Bar */
+#StoreTemplate .Panel:has(input[placeholder*="Search"]) {
+    background-color: #020408 !important;
+    background: #020408 !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 0px !important;
+}
+
+/* Center the Wishlist Header (Avatar and Title) */
+#StoreTemplate div:has(> h2) {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+}
+#StoreTemplate div:has(> h2) > h2 {
+    margin: 0 !important;
+}
+
+/* Center the Wishlist button vertically in nav bar */
+#StoreTemplate .Panel[role="navigation"] a[href*="/wishlist/"] {
+    align-self: center !important;
+    margin: auto 0 !important;
+}
+
+/* On-hover effect for game entries */
+#StoreTemplate div:has(> a[href*="/app/"]) {
+    transition: background-color 0.2s ease, transform 0.2s ease !important;
+    border-radius: 6px !important;
+}
+#StoreTemplate div:has(> a[href*="/app/"]):hover {
+    background-color: #020408 !important; 
+    transform: translateY(-2px) !important;
+}
+
+/* Hovering on a game name changes text color */
+#StoreTemplate a[href*="/app/"]:hover,
+#StoreTemplate a[href*="/app/"]:hover *,
+#StoreTemplate a[href*="/app/"]:hover .title {
+    color: #1a9fff !important;
+}
+
+/* Differentiate the price background */
+#StoreTemplate a[href*="/app/"] > div[role="link"],
+#StoreTemplate .discount_block,
+#StoreTemplate .game_purchase_price,
+#StoreTemplate div:has(> .discount_pct),
+#StoreTemplate div:has(> .discount_final_price) {
+    background-color: #1e2329 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
+
+/* Add to Cart button style to match theme */
+#StoreTemplate .btn_green_white_innerfade,
+#StoreTemplate .btn_addtocart,
+#StoreTemplate .btnv6_green_white_innerfade,
+#StoreTemplate button[class*="Add"],
+#StoreTemplate a[class*="Add"],
+#StoreTemplate div:has(> .discount_block) > button,
+#StoreTemplate div:has(> .discount_block) > a,
+#StoreTemplate div:has(> .game_purchase_price) > button,
+#StoreTemplate div:has(> .game_purchase_price) > a,
+#StoreTemplate .discount_block + button,
+#StoreTemplate .discount_block + a,
+#StoreTemplate .game_purchase_price + button,
+#StoreTemplate .game_purchase_price + a {
+    background: #0b1016 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    padding: 4px 12px !important;
+}
+#StoreTemplate .btn_green_white_innerfade:hover,
+#StoreTemplate .btn_addtocart:hover,
+#StoreTemplate .btnv6_green_white_innerfade:hover,
+#StoreTemplate button[class*="Add"]:hover,
+#StoreTemplate a[class*="Add"]:hover,
+#StoreTemplate div:has(> .discount_block) > button:hover,
+#StoreTemplate div:has(> .discount_block) > a:hover,
+#StoreTemplate div:has(> .game_purchase_price) > button:hover,
+#StoreTemplate div:has(> .game_purchase_price) > a:hover,
+#StoreTemplate .discount_block + button:hover,
+#StoreTemplate .discount_block + a:hover,
+#StoreTemplate .game_purchase_price + button:hover,
+#StoreTemplate .game_purchase_price + a:hover {
+    background: #131920 !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Game tags styling */
+#StoreTemplate button[class*="U3ndjc3qo"],
+#StoreTemplate .app_tag,
+#StoreTemplate a[href*="/tags/"] {
+    background-color: #05070a !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 4px !important;
+}
+
+/* Apply theme to filter bar buttons (Options, Sort by, Share) */
+#StoreTemplate .Panel:has(input[placeholder*="Search by"]) button,
+#StoreTemplate .Panel:has(input[placeholder*="Search by"]) div[role="button"],
+#StoreTemplate .Panel:has(input[placeholder*="Search by"]) div:has(> span:contains("Sort by:")) {
+    background-color: #05070a !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+/* Legacy Steam Classes (just in case they revert or for older clients) */
+html body .wishlist_row {
+    background: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 0px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    transition: all 0.2s ease !important;
+    margin-bottom: 12px !important;
+}
+
+html body .wishlist_row:hover {
+    background: rgba(15, 23, 42, 0.9) !important;
+    border: 1px solid rgba(56, 189, 248, 0.5) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), 0 0 15px rgba(56, 189, 248, 0.2) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* React Wishlist (Modern Steam Client) */
+#StoreTemplate [data-rfd-draggable-id^="WishlistItem-"] > .Panel {
+    background: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 0px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    transition: all 0.2s ease !important;
+    margin-bottom: 12px !important;
+}
+
+#StoreTemplate [data-rfd-draggable-id^="WishlistItem-"] > .Panel:hover {
+    background: rgba(15, 23, 42, 0.9) !important;
+    border: 1px solid rgba(56, 189, 248, 0.5) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), 0 0 15px rgba(56, 189, 248, 0.2) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Strip native inner backgrounds so our glass row shows through */
+#StoreTemplate [data-rfd-draggable-id^="WishlistItem-"] > .Panel > div,
+#StoreTemplate [data-rfd-draggable-id^="WishlistItem-"] > .Panel > div > div {
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Add to Cart button & Primary Action Buttons */
+#StoreTemplate [data-rfd-draggable-id^="WishlistItem-"] > .Panel button:not(.SVGIcon_Button), 
+#StoreTemplate [data-rfd-draggable-id^="WishlistItem-"] > .Panel div[role="button"]:has(svg),
+#StoreTemplate .btn_addtocart {
+    background: rgba(30, 41, 59, 0.8) !important;
+    border: 1px solid rgba(56, 189, 248, 0.4) !important;
+    border-radius: 0px !important;
+    color: #f1f5f9 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease !important;
+}
+
+#StoreTemplate [data-rfd-draggable-id^="WishlistItem-"] > .Panel button:hover:not(.SVGIcon_Button),
+#StoreTemplate [data-rfd-draggable-id^="WishlistItem-"] > .Panel div[role="button"]:hover:has(svg),
+#StoreTemplate .btn_addtocart:hover {
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.8), rgba(56, 189, 248, 0.6)) !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4) !important;
+}
+
+/* The Search Input & Dropdowns */
+#StoreTemplate input[placeholder*="Search"],
+#StoreTemplate select,
+#StoreTemplate div[role="button"]:not([data-rfd-draggable-id^="WishlistItem-"] *) {
+    background: rgba(8, 14, 26, 0.8) !important;
+    border: 1px solid rgba(56, 189, 248, 0.2) !important;
+    border-radius: 0px !important;
+    color: #e2e8f0 !important;
+}
+
+#StoreTemplate input[placeholder*="Search"]:focus {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3) !important;
+}
+
+/* Drag Handle Icon / Rank */
+#StoreTemplate [data-rfd-draggable-id^="WishlistItem-"] > .Panel svg {
+    color: #38bdf8 !important;
+    fill: #38bdf8 !important;
+}
