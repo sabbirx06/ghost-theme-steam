@@ -148,7 +148,8 @@ div[class*="supernav_content"],
 .supernav_content,
 #store_nav_area .submenu,
 .submenu_Store,
-.submenu_Community {
+.submenu_Community,
+.popup_block_new .popup_body {
     background: #000000 !important;
     background-color: #000000 !important;
 }
@@ -156,14 +157,16 @@ div[class*="supernav_content"],
 div[class*="supernav_content"] a,
 .supernav_content a,
 .submenu_Store a,
-.submenu_Community a {
+.submenu_Community a,
+.popup_menu_item {
     background: transparent !important;
 }
 
 div[class*="supernav_content"] a:hover,
 .supernav_content a:hover,
 .submenu_Store a:hover,
-.submenu_Community a:hover {
+.submenu_Community a:hover,
+.popup_menu_item:hover {
     background: rgba(30, 64, 175, 0.4) !important; /* Royal Blue accent */
     color: #67e8f9 !important; /* Cyan text */
     text-decoration: none !important;
