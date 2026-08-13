@@ -102,7 +102,7 @@
             button.className = 'ghost-sidebar-shortcut';
             button.title = shortcut.label;
             button.setAttribute('aria-label', shortcut.label);
-            button.textContent = shortcut.icon;
+            // Intentionally empty textContent so the CSS ::after mask can render the custom SVG without overlapping text
             button.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
