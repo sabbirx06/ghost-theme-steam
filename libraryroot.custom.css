@@ -115,6 +115,19 @@ html body div[class*="titlebar_Navigation"] *::before {
 }
 
 /* ============================================================
+   MAIN WINDOW PITCH BLACK TITLEBAR (Will not affect popups)
+   ============================================================ */
+html body ._3Z7VQ1IMk4E3HsHvrkLNgo,
+html body ._39oUCO1OuizVPwcnnv88no,
+html body div[class*="TitleBar"],
+html body div[class*="titleBar"],
+html body div[class*="titlebar_Header"],
+html body header[class*="titlebar_"] {
+    background-color: #020408 !important;
+    background: #020408 !important;
+}
+
+/* ============================================================
    HEADER DROPDOWN MENUS (Pure Black Background)
    ============================================================ */
 div[class*="supernav_content"],
