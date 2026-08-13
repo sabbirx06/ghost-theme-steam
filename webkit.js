@@ -110,6 +110,17 @@
             });
             iconRow.append(button);
         }
+
+        // Fix cross-platform icon shifting by assigning classes to native icons
+        const nativeIcons = Array.from(iconRow.children).filter(el => !el.classList.contains('ghost-sidebar-shortcut'));
+        // If there are 5 icons instead of 6, the Windows OS icon is missing, so we shift the index by 1
+        const offset = nativeIcons.length <= 5 ? 1 : 0;
+        
+        nativeIcons.forEach((icon, i) => {
+            // Remove previous ghost-filter-icon classes if they exist
+            icon.className = icon.className.replace(/\bghost-filter-icon-\d\b/g, '');
+            icon.classList.add(`ghost-filter-icon-${i + offset}`);
+        });
     }
 
     function refresh() {
