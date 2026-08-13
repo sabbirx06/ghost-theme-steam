@@ -483,75 +483,86 @@ html body.DesktopUI div[class*="GameListHomeAndSearch"] > div {
     transition: all 0.15s ease-out !important;
 }
 
-/* Replace the filter icons with a cohesive Lucide icon pack */
-html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > [class*="ghost-filter-icon-"] > * {
-    display: none !important;
-}
-html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > [class*="ghost-filter-icon-"] {
-    position: relative !important;
-    color: transparent !important;
-    background-image: none !important;
+/* ============================================================
+   LIBRARY SIDEBAR FILTER ICONS (Native & Injected)
+   ============================================================ */
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU {
+    gap: 4px !important;
 }
 
-html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > [class*="ghost-filter-icon-"]::after {
+/* Neon Cyan hover effect for ALL icons in the filter bar */
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *:hover,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *.Active {
+    background: rgba(34, 211, 238, 0.13) !important;
+    border-radius: 4px !important;
+}
+
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *:hover svg,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *.Active svg,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *:hover circle,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *:hover path,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *:hover polyline,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *.Active circle,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *.Active path,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *.Active polyline {
+    stroke: #67e8f9 !important;
+    fill: transparent !important;
+    filter: drop-shadow(0 0 2px rgba(103, 232, 249, 0.5)) !important;
+}
+
+/* Style injected shortcuts (Add, Downloads, Friends) */
+html body.DesktopUI .ghost-sidebar-shortcut {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 30px !important;
+    height: 30px !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: transparent !important;
+    position: relative !important;
+    cursor: pointer !important;
+    border-radius: 4px !important;
+}
+
+html body.DesktopUI .ghost-sidebar-shortcut::after {
     content: "" !important;
     position: absolute !important;
     inset: 0 !important;
     background-color: rgba(203, 213, 225, 0.7) !important;
-    mask-size: 16px !important;
+    mask-size: 18px !important;
     mask-position: center !important;
     mask-repeat: no-repeat !important;
-    -webkit-mask-size: 16px !important;
+    -webkit-mask-size: 18px !important;
     -webkit-mask-position: center !important;
     -webkit-mask-repeat: no-repeat !important;
     pointer-events: none !important;
-    transition: background-color 0.15s ease !important;
+    transition: background-color 0.15s ease, filter 0.15s ease !important;
 }
 
-html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *:hover,
-html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *.Active {
-    color: #67e8f9 !important;
-}
-
-html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > [class*="ghost-filter-icon-"]:hover::after,
-html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > [class*="ghost-filter-icon-"].Active::after {
+html body.DesktopUI .ghost-sidebar-shortcut:hover::after {
     background-color: #67e8f9 !important;
+    filter: drop-shadow(0 0 4px rgba(103, 232, 249, 0.4)) !important;
 }
 
-/* 0: Playable on OS (Monitor Play) */
-html body.DesktopUI .ghost-filter-icon-0::after {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='20' height='14' x='2' y='3' rx='2'/%3E%3Cpath d='M12 17v4'/%3E%3Cpath d='M8 21h8'/%3E%3Cpath d='m9 10 2 2 4-4'/%3E%3C/svg%3E") !important;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='20' height='14' x='2' y='3' rx='2'/%3E%3Cpath d='M12 17v4'/%3E%3Cpath d='M8 21h8'/%3E%3Cpath d='m9 10 2 2 4-4'/%3E%3C/svg%3E") !important;
+/* "Add a game" */
+html body.DesktopUI .ghost-sidebar-shortcut[title="Add a game"]::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' x2='12' y1='8' y2='16'/%3E%3Cline x1='8' x2='16' y1='12' y2='12'/%3E%3C/svg%3E") !important;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' x2='12' y1='8' y2='16'/%3E%3Cline x1='8' x2='16' y1='12' y2='12'/%3E%3C/svg%3E") !important;
 }
 
-/* 1: Recent (Clock) */
-html body.DesktopUI .ghost-filter-icon-1::after {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E") !important;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E") !important;
+/* "Manage downloads" */
+html body.DesktopUI .ghost-sidebar-shortcut[title="Manage downloads"]::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 8v8'/%3E%3Cpath d='m8 12 4 4 4-4'/%3E%3C/svg%3E") !important;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 8v8'/%3E%3Cpath d='m8 12 4 4 4-4'/%3E%3C/svg%3E") !important;
 }
 
-/* 2: Ready to play (Play Circle) */
-html body.DesktopUI .ghost-filter-icon-2::after {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolygon points='10 8 16 12 10 16 10 8'/%3E%3C/svg%3E") !important;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolygon points='10 8 16 12 10 16 10 8'/%3E%3C/svg%3E") !important;
-}
-
-/* 3: Add to collection (Plus Circle) */
-html body.DesktopUI .ghost-filter-icon-3::after {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' x2='12' y1='8' y2='16'/%3E%3Cline x1='8' x2='16' y1='12' y2='12'/%3E%3C/svg%3E") !important;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' x2='12' y1='8' y2='16'/%3E%3Cline x1='8' x2='16' y1='12' y2='12'/%3E%3C/svg%3E") !important;
-}
-
-/* 4: Installed locally (Arrow Down Circle) */
-html body.DesktopUI .ghost-filter-icon-4::after {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 8v8'/%3E%3Cpath d='m8 12 4 4 4-4'/%3E%3C/svg%3E") !important;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 8v8'/%3E%3Cpath d='m8 12 4 4 4-4'/%3E%3C/svg%3E") !important;
-}
-
-/* 5: Users / Multiplayer */
-html body.DesktopUI .ghost-filter-icon-5::after {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M22 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E") !important;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M22 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E") !important;
+/* "Friends and chat" */
+html body.DesktopUI .ghost-sidebar-shortcut[title="Friends and chat"]::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M22 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E") !important;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M22 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E") !important;
 }
 
 /* ------------------------------------------------------------
