@@ -218,7 +218,7 @@ html body.DesktopUI ._2tC_c87MH67xQM7Y0pVyXm::before {
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
     -webkit-mask-composite: xor !important;
     mask-composite: exclude !important;
-    animation: ghostBorderBeam 10s linear infinite !important;
+    animation: ghostBorderBeam 30s linear infinite !important;
     z-index: 10 !important;
     pointer-events: none !important;
 }
@@ -489,11 +489,81 @@ html body.DesktopUI div[class*="GameListHomeAndSearch"] > div {
     transition: all 0.15s ease-out !important;
 }
 
+/* Replace the filter icons with a cohesive Lucide icon pack */
+/* Hide all default icons whether they are SVGs, divs, images, or font icons */
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > * > * {
+    display: none !important;
+}
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > * {
+    position: relative !important;
+    color: transparent !important;
+    background-image: none !important;
+}
+
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background-color: rgba(203, 213, 225, 0.7) !important;
+    mask-size: 16px !important;
+    mask-position: center !important;
+    mask-repeat: no-repeat !important;
+    -webkit-mask-size: 16px !important;
+    -webkit-mask-position: center !important;
+    -webkit-mask-repeat: no-repeat !important;
+    pointer-events: none !important;
+    transition: background-color 0.15s ease !important;
+}
+
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *:hover::after,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *.Active::after {
+    background-color: #67e8f9 !important;
+}
+
+/* 1: Playable on OS (Monitor Play) */
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *:nth-child(1)::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='20' height='14' x='2' y='3' rx='2'/%3E%3Cpath d='M12 17v4'/%3E%3Cpath d='M8 21h8'/%3E%3Cpath d='m9 10 2 2 4-4'/%3E%3C/svg%3E") !important;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='20' height='14' x='2' y='3' rx='2'/%3E%3Cpath d='M12 17v4'/%3E%3Cpath d='M8 21h8'/%3E%3Cpath d='m9 10 2 2 4-4'/%3E%3C/svg%3E") !important;
+}
+
+/* 2: Recent (Clock) */
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *:nth-child(2)::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E") !important;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E") !important;
+}
+
+/* 3: Ready to play (Play Circle) */
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *:nth-child(3)::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolygon points='10 8 16 12 10 16 10 8'/%3E%3C/svg%3E") !important;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolygon points='10 8 16 12 10 16 10 8'/%3E%3C/svg%3E") !important;
+}
+
+/* 4: Add to collection (Plus Circle) */
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *:nth-child(4)::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' x2='12' y1='8' y2='16'/%3E%3Cline x1='8' x2='16' y1='12' y2='12'/%3E%3C/svg%3E") !important;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' x2='12' y1='8' y2='16'/%3E%3Cline x1='8' x2='16' y1='12' y2='12'/%3E%3C/svg%3E") !important;
+}
+
+/* 5: Installed locally (Arrow Down Circle) */
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *:nth-child(5)::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 8v8'/%3E%3Cpath d='m8 12 4 4 4-4'/%3E%3C/svg%3E") !important;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 8v8'/%3E%3Cpath d='m8 12 4 4 4-4'/%3E%3C/svg%3E") !important;
+}
+
+/* 6: Users / Multiplayer */
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *:nth-child(6)::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M22 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E") !important;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M22 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E") !important;
+}
+
 /* ------------------------------------------------------------
-   Custom Theming for Dialog Dropdown Menus (e.g., Sorting)
+   Custom Theming for Dialog Dropdown Menus (e.g., Sorting) & Context Menus
    ------------------------------------------------------------ */
 html body.DesktopUI .DialogMenuPosition ._DialogInputContainer,
-html body.DesktopUI .ContextMenuPopup {
+html body .ContextMenuPopup,
+html body .contextMenuContents,
+html body [class*="contextmenu_ContextMenuPopup_"],
+body.ContextMenuPopupBody {
     background: #080e1a !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
@@ -504,9 +574,12 @@ html body.DesktopUI .ContextMenuPopup {
     padding: 4px !important;
 }
 
+
 /* Dropdown Menu Items */
 html body.DesktopUI .DialogMenuPosition ._DialogInputContainer > button,
-html body.DesktopUI .ContextMenuPopup div {
+html body .ContextMenuPopup div,
+html body .contextMenuItem,
+html body [class*="contextmenu_contextMenuItem_"] {
     background: transparent !important;
     color: #cbd5e1 !important;
     padding: 8px 12px !important;
@@ -515,13 +588,18 @@ html body.DesktopUI .ContextMenuPopup div {
     cursor: pointer !important;
 }
 
+
 /* Dropdown Menu Item Hover / Selected */
 html body.DesktopUI .DialogMenuPosition ._DialogInputContainer > button:hover,
 html body.DesktopUI .DialogMenuPosition ._DialogInputContainer > button:focus,
 html body.DesktopUI .DialogMenuPosition ._DialogInputContainer > button[aria-selected="true"],
 html body.DesktopUI .DialogMenuPosition ._DialogInputContainer > button.ContextMenuAutoFocus,
-html body.DesktopUI .ContextMenuPopup div:hover,
-html body.DesktopUI .ContextMenuPopup div:focus {
+html body .ContextMenuPopup div:hover,
+html body .ContextMenuPopup div:focus,
+html body .contextMenuItem:hover,
+html body .contextMenuItem:focus,
+html body [class*="contextmenu_contextMenuItem_"]:hover,
+html body [class*="contextmenu_contextMenuItem_"]:focus {
     background: linear-gradient(90deg, rgba(37, 99, 235, 0.6), rgba(56, 189, 248, 0.4)) !important;
     color: #ffffff !important;
 }
@@ -590,6 +668,12 @@ html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB .Panel:has(> div > svg):has(> div >
     border-color: rgba(34, 211, 238, 0.4) !important;
     background: rgba(30, 41, 59, 0.8) !important;
     box-shadow: 0 0 10px rgba(34, 211, 238, 0.15) !important;
+}
+
+/* Force the color of the filter icons to stay transparent on hover so old SVGs don't reappear */
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *:hover,
+html body.DesktopUI ._3x1HklzyDs4TEjACrRO2tB ._1PgAonvorr0o_NMxNKiDFU > *.Active {
+    color: transparent !important;
 }
 
 /* ============================================================
@@ -683,9 +767,9 @@ html body.DesktopUI div[class*="collectionview_CollectionCapsule_"] {
     overflow: visible !important;
     border: 2px solid transparent !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                border-color 0.3s ease,
-                box-shadow 0.3s ease !important;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s ease,
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
     position: relative !important;
     will-change: transform, border-color, box-shadow !important;
 }
@@ -886,8 +970,9 @@ html body.DesktopUI ._2sYIghGVXJr6tsQVvcryy8,
 html body.DesktopUI ._2-O4ZG0KrnSrzISHBKctFQ,
 html body.DesktopUI div[class*="CollectionHeader"] {
     color: #cbd5e1 !important;
-    font-weight: 700 !important;
+    font-weight: 500 !important;
     letter-spacing: 0.5px !important;
+    -webkit-font-smoothing: antialiased !important;
 }
 
 /* ============================================================
@@ -897,9 +982,9 @@ html body.DesktopUI div[class*="CollectionHeader"] {
 html body.DesktopUI ._3IWn-2rn7x98o5fDd0rAxb,
 html body.DesktopUI ._2-O4ZG0KrnSrzISHBKctFQ {
     transition:
-        transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-        background 0.12s ease-out,
-        box-shadow 0.15s ease-out !important;
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        background 0.3s ease,
+        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
     transform-origin: center center;
     border-radius: 0px !important;
     position: relative;
@@ -909,7 +994,7 @@ html body.DesktopUI ._2-O4ZG0KrnSrzISHBKctFQ {
 
 html body.DesktopUI ._3IWn-2rn7x98o5fDd0rAxb:hover,
 html body.DesktopUI ._2-O4ZG0KrnSrzISHBKctFQ:hover {
-    transform: perspective(600px) translateZ(18px) !important;
+    transform: translateX(6px) !important;
     background: linear-gradient(90deg, rgba(37, 99, 235, 0.16) 0%, rgba(37, 99, 235, 0.04) 100%) !important;
     box-shadow:
         -2px 0 0 0 rgba(37, 99, 235, 0.55),
@@ -917,6 +1002,7 @@ html body.DesktopUI ._2-O4ZG0KrnSrzISHBKctFQ:hover {
         0 2px 8px rgba(0, 0, 0, 0.4),
         0 0 14px rgba(37, 99, 235, 0.1) !important;
     z-index: 1 !important;
+    font-weight: 700 !important;
 }
 
 /* ============================================================
@@ -930,6 +1016,7 @@ html body.DesktopUI ._1UBpAXP408Ez_L_mXhW5Q9._2-O4ZG0KrnSrzISHBKctFQ {
     border-radius: 0px !important;
     color: #ffffff !important;
     box-shadow: inset 0 0 10px rgba(37, 99, 235, 0.25) !important;
+    font-weight: 700 !important;
 }
 
 /* ============================================================
@@ -1159,7 +1246,6 @@ html body.DesktopUI a[href*="/library/home"] svg {
 html body.DesktopUI div:has(> div[dir="ltr"]) {
     min-width: 0 !important;
 }
-html body.DesktopUI div:has(> svg) + div[dir="ltr"],
 html body.DesktopUI div[dir="ltr"] {
     text-overflow: ellipsis !important;
     overflow: hidden !important;

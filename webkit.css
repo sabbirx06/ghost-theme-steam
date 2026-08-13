@@ -11,7 +11,7 @@
 }
 
 /* ============================================================
-   0. PITCH BLACK TITLEBAR HEADER CONTAINER
+   0. TRANSPARENT TITLEBAR HEADER CONTAINER
    ============================================================ */
 
 html body ._3Z7VQ1IMk4E3HsHvrkLNgo,
@@ -20,8 +20,8 @@ html body div[class*="TitleBar"],
 html body div[class*="titleBar"],
 html body div[class*="titlebar_Header"],
 html body header[class*="titlebar_"] {
-    background-color: #05070a !important;
-    background: #05070a !important;
+    background-color: transparent !important;
+    background: transparent !important;
     background-image: none !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
@@ -955,4 +955,152 @@ html body .wishlist_row .tag:hover {
 /* Remove button */
 html body .wishlist_row .delete {
     color: #ef4444 !important;
+}
+
+/* ============================================================
+   15. CUSTOM WEBKIT SCROLLBARS (GLOBAL)
+   ============================================================ */
+
+::-webkit-scrollbar {
+    background-color: transparent !important;
+    width: 14px !important;
+    height: 14px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(34, 211, 238, 0.3) !important;
+    border: 4px solid transparent !important;
+    background-clip: padding-box !important;
+    border-radius: 8px !important;
+    min-height: 40px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(56, 189, 248, 0.6) !important;
+    border: 4px solid transparent !important;
+    background-clip: padding-box !important;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #38bdf8 !important;
+    border: 4px solid transparent !important;
+    background-clip: padding-box !important;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent !important;
+}
+
+/* Hide the chunky up/down arrows on the scrollbar */
+::-webkit-scrollbar-button {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* ============================================================
+   16. DIALOGS & GAME PROPERTIES THEMING (GLOBAL)
+   ============================================================ */
+
+/* Main Dialog & Popup Backgrounds */
+html body:not(.DesktopUI),
+html body.PopupFullWindow,
+html body.ModalDialogPopup,
+html body [class*="DialogContent"],
+html body [class*="DialogBody"],
+html body [class*="DialogHeader"],
+html body [class*="ModalPosition"] {
+    background-color: #04070d !important;
+    background: #04070d !important;
+    color: #cbd5e1 !important;
+}
+
+/* Secondary/Inner Panels in Dialogs (like DLC lists, Local Files box, Properties Sidebar) */
+html body:not(.DesktopUI) nav, /* The left sidebar in popups */
+html body:not(.DesktopUI) [class*="Panel"],
+html body:not(.DesktopUI) [class*="Section"],
+html body [class*="DialogBody"] [class*="Panel"],
+html body [class*="DialogBody"] [class*="Section"] {
+    background-color: rgba(15, 23, 42, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.03) !important;
+    border-radius: 6px !important;
+}
+
+
+/* Dialog Titles & Labels */
+html body [class*="DialogHeader"] *,
+html body:not(.DesktopUI) [class*="Title"] {
+    color: #38bdf8 !important;
+}
+
+/* Text Inputs, Toggles and Dropdowns in Dialogs */
+html body .DialogTextInputBase, 
+html body ._DialogInputContainer,
+html body [class*="DialogDropDown"] {
+    background: rgba(11, 18, 32, 0.8) !important;
+    border: 1px solid rgba(56, 189, 248, 0.08) !important;
+    border-radius: 6px !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+html body .DialogTextInputBase:focus, 
+html body ._DialogInputContainer:focus-within,
+html body [class*="DialogDropDown"]:hover {
+    border: 1px solid rgba(56, 189, 248, 0.3) !important;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.1) !important;
+}
+
+/* Ensure the properties window content wrapper doesn't have a grey background */
+html body.PopupFullWindow > div,
+html body.PopupFullWindow > div > div {
+    background: transparent !important;
+}
+
+/* ============================================================
+   17. DOWNLOADS PAGE THEMING (GLOBAL)
+   ============================================================ */
+
+/* Downloads Page Background */
+html body [class*="downloads_"],
+html body [class*="DownloadsPage"] {
+    background-color: #05070a !important;
+}
+
+/* Download Item Container */
+html body [class*="downloads_"] [class*="Section"],
+html body [class*="downloads_"] [class*="Item"] {
+    background-color: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid rgba(56, 189, 248, 0.15) !important;
+    border-radius: 6px !important;
+}
+
+/* Download Progress Bar */
+html body [class*="downloads_"] [class*="ProgressBar"] {
+    background: linear-gradient(90deg, #2563eb, #22d3ee) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.4) !important;
+}
+
+/* Download Progress Bar Track */
+html body [class*="downloads_"] [class*="ProgressTrack"] {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 4px !important;
+}
+
+/* Download Buttons (Play, Pause, Move to Top) */
+html body [class*="downloads_"] button {
+    background: rgba(30, 64, 175, 0.2) !important;
+    border: 1px solid rgba(56, 189, 248, 0.3) !important;
+    color: #38bdf8 !important;
+}
+
+html body [class*="downloads_"] button:hover {
+    background: rgba(56, 189, 248, 0.25) !important;
+    border-color: #38bdf8 !important;
+    color: #ffffff !important;
 }
