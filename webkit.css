@@ -1107,3 +1107,12 @@ html body [class*="downloads_"] button:hover {
     border-color: #38bdf8 !important;
     color: #ffffff !important;
 }
+
+/* Restore solid background for Supernav dropdown popups, which reuse
+   ContextMenuPopupBody but should NOT be transparent like real context menus */
+html.Library_Supernav body.ContextMenuPopupBody,
+html.Store_Supernav body.ContextMenuPopupBody,
+html.Community_Supernav body.ContextMenuPopupBody,
+html.Profile_Supernav body.ContextMenuPopupBody {
+  background: #000000 !important;
+}
